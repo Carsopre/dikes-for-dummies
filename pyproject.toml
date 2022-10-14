@@ -45,7 +45,7 @@ multi_line_output = 3
 line_length = 88
 
 [tool.commitizen]
-name = "cz_customize"
+name = "cz_conventional_commits"
 changelog_file = "docs/changelog.md"
 update_changelog_on_bump = true
 version = "0.3.0"
