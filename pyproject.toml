@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dikes-for-dummies"
-version = "0.2.0"
+version = "0.3.0"
 description = "Python course that navigates the creation of an MVP from an empty project."
 authors = ["Carles S. Soriano Perez <carles.sorianoperez@gmail.com>"]
 license = "MIT"
@@ -11,6 +11,7 @@ repository = "https://github.com/Carsopre/dikes-for-dummies"
 
 [tool.poetry.dependencies]
 python = ">=3.10, <3.12"
+shapely = "^1.8.5.post1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
@@ -44,10 +45,10 @@ multi_line_output = 3
 line_length = 88
 
 [tool.commitizen]
-name = "cz_conventional_commits"
+name = "cz_customize"
 changelog_file = "docs/changelog.md"
 update_changelog_on_bump = true
-version = "0.2.0"
+version = "0.3.0"
 tag_format = "v$major.$minor.$patch"
 version_files= [
     "dikesfordummies/__init__.py",
