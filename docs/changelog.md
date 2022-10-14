@@ -1,3 +1,5 @@
+## v0.4.0 (2022-10-14)
+
 ## v0.3.0 (2022-10-14)
 
 - new(dikesfordummies/dike): Added base dike module with classes
