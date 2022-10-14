@@ -1,3 +1,9 @@
+## v0.5.0 (2022-10-14)
+
+### Feat
+
+- **DikesForDummiesLogger**: Added logger for Dikes For Dummies
+
 ## v0.4.0 (2022-10-14)
 
 ## v0.3.0 (2022-10-14)
