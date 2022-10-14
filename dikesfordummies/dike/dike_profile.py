@@ -56,5 +56,5 @@ class DikeProfile(DikeProfileProtocol):
         if not tuple_list:
             raise ValueError("tuple_list argument required.")
         _dike = cls()
-        _dike.set_points_from_tuples(tuple_list)
+        _dike.characteristic_points = list(map(Point, tuple_list))
         return _dike

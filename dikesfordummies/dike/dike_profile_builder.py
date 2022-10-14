@@ -25,6 +25,7 @@ class DikeProfileBuilder:
 
     def __init__(self) -> None:
         self.dike_input = None
+        self.dike_type = None
 
     def _build_waterside(self) -> List[Point]:
         _p4 = Point(0, self.dike_input.kruin_hoogte)
