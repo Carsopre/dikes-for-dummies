@@ -17,6 +17,8 @@ shapely = "^1.8.5.post1"
 black = "^22.10.0"
 commitizen = "^2.35.0"
 isort = "^5.10.1"
+pytest = "^7.1.3"
+pytest-cov = "^4.0.0"
 
 [tool.black]
 line-length = 88
