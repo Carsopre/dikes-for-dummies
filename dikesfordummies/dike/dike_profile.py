@@ -5,8 +5,10 @@ from typing import List, Tuple
 
 from shapely.geometry import Point
 
+from dikesfordummies.dike.dike_profile_protocol import DikeProfileProtocol
 
-class DikeProfile:
+
+class DikeProfile(DikeProfileProtocol):
 
     characteristic_points: List[Point]
 

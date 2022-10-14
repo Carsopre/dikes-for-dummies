@@ -1,16 +1,17 @@
 from __future__ import annotations
 
-from typing import List
+from typing import List, Optional, Type
 
 from shapely.geometry import Point
 
 from dikesfordummies.dike.dike_input import DikeInput
 from dikesfordummies.dike.dike_profile import DikeProfile
+from dikesfordummies.dike.dike_profile_protocol import DikeProfileProtocol
 
 
 class DikeProfileBuilder:
     """
-    Class responsible of building a valid `DikeProfile` with a given `DikeInput`.
+    Class responsible of building a valid concrete `DikeProfileProtocol` with a given `DikeInput`.
 
     Raises:
         ValueError: When trying to `build` without a valid `DikeInput`.
@@ -20,6 +21,7 @@ class DikeProfileBuilder:
     """
 
     dike_input: DikeInput
+    dike_type: Type[DikeProfileProtocol]
 
     def __init__(self) -> None:
         self.dike_input = None
@@ -57,39 +59,49 @@ class DikeProfileBuilder:
         _p8 = Point(_x_p8, self.dike_input.binnen_maaiveld)
         return [_p5, _p6, _p7, _p8]
 
-    def build(self) -> DikeProfile:
+    def build(self) -> DikeProfileProtocol:
         """
-        Builds a `DikeProfile` based on the given `DikeInput`.
+        Builds a `DikeProfileProtocol` based on the given `DikeInput` and concrete type of `DikeProfileProtocol`
 
         Raises:
-            ValueError: When the `DikeInput` is not given.
+            ValueError: When the `dike_input` or `dike_type` are not provided.
 
         Returns:
-            DikeProfile: Valid instantiated DikeProfile.
+            DikeProfileProtocol: Valid concrete instanced of DikeProfileProtocol.
         """
         if not self.dike_input:
             raise ValueError("Input Profile should be provided.")
+        if not self.dike_type:
+            raise ValueError(
+                f"Dike type from {DikeProfileProtocol} should be provided."
+            )
 
         _dike_points: List[Point] = []
         _waterside = self._build_waterside()
         _polderside = self._build_polderside()
         _dike_points.extend(_waterside)
         _dike_points.extend(_polderside)
-        _dike = DikeProfile()
+        _dike = self.dike_type()
         _dike.characteristic_points = _dike_points
         return _dike
 
     @classmethod
-    def from_input(cls, dike_input: DikeInput) -> DikeProfileBuilder:
+    def from_input(
+        cls,
+        dike_input: DikeInput,
+        dike_type: Optional[Type[DikeProfileProtocol]] = DikeProfile,
+    ) -> DikeProfileBuilder:
         """
-        Initializes a `DikeProfileBuilder' with a valid `DikeInput` as `dike_input` parameter.
+        Initializes a `DikeProfileBuilder' with a valid `DikeInput` as `dike_input` parameter and a concrete type of `DikeProfileProtocol` as `dike_type`.
 
         Args:
             dike_input (DikeInput): Dike input to be set to the instance of the builder.
+            dike_type (Optional[Type[DikeProfileProtocol]], optional): _description_. Defaults to DikeProfile.
 
         Returns:
             DikeProfileBuilder: Valid instance of a DikeProfileBuilder instance.
         """
         _builder = cls()
         _builder.dike_input = dike_input
+        _builder.dike_type = dike_type
         return _builder
