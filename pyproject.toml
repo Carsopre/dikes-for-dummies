@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "dikes-for-dummies"
+version = "0.2.0"
+description = "Python course that navigates the creation of an MVP from an empty project."
+authors = ["Carles S. Soriano Perez <carles.sorianoperez@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "dikesfordummies"}]
+repository = "https://github.com/Carsopre/dikes-for-dummies"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+commitizen = "^2.35.0"
+isort = "^5.10.1"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39']
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | \.virtualenvs
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+changelog_file = "docs/changelog.md"
+update_changelog_on_bump = true
+version = "0.2.0"
+tag_format = "v$major.$minor.$patch"
+version_files= [
+    "dikesfordummies/__init__.py",
+    "pyproject.toml:version",]
+
+[tool.commitizen.customize]
+bump_pattern = "^(break|new|feat|fix|hotfix|refactor|docs)"
+bump_map = {"break" = "MAJOR", "new" = "MINOR", "feat" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH", "refactor"="PATCH", "docs" = "PATCH"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
