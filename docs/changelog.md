@@ -1,3 +1,9 @@
+## v0.7.0 (2022-10-15)
+
+### Feat
+
+- **chapter 07**: Added required logic from chapter 06 to start working on creating documentation. (#7)
+
 ## v0.6.0 (2022-10-14)
 
 ### Feat
