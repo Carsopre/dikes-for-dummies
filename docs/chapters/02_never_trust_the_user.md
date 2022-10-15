@@ -2,7 +2,7 @@
 
 Catching up? Just run the following command in your command line:
 
-```bash
+```console
 conda env create -f environment.yml
 conda activate dikes-for-dummies_env
 poetry install
@@ -21,51 +21,59 @@ We are going to start debugging some snippets in this chapter to get a grip of s
 
 ## Methods in Python
 These are ways of declaring methods and handling their input / output. Try them out.
+
 ```python
 def get_dike_profile_points():
     return None
 get_dike_profile_points()
 ```
+
 ```python
 def get_dike_profile_points(*args, **kwargs):
     return (1,2)
 x = get_dike_profile_points(abc=(3,4,5))
 x1, x2 = x
 ```
+
 ```python
 def get_dike_profile_points(abc, *args, **kwargs):
     return ((1,2), (3,4), (5,6))
 p1, p2 , p3= get_dike_profile_points(3,4,5)
 ```
+
 As can be seen, we can collect the parameters declaring them explicetly or by using the parameters `*args` or `**kwargs`.
 
 ## Classes in Python
 Official reference https://docs.python.org/3/tutorial/classes.html.
 
 Creating classes is very simple, you just need to add the `class` type at its begining:
+
 ```python
 class DikeProfile:
     pass
 ```
+
 We can also apply (multiple) inheritance.
+
 ```python
 class SoilReinforcementProfile(DikeProfile):
     pass
 ```
+
 ### Initialization.
 
 We initializing classes usually with the `def __init__(self, *args, **kwargs)` method. However we can take different approaches.
 
- - Default constructor:
- ```python
+- Default constructor:
+```python
 class DikeProfile:
     def __init__(self, *args, **kwargs):
         self.name = "A default Dike Profile"
 _dike_profile = DikeProfile()
- ```
-
+```
  - From a class method (later further explained):
- ```python
+
+```python
 class DikeProfile:
     @classmethod
     def from_data_dict(cls, **kwargs):
@@ -73,16 +81,17 @@ class DikeProfile:
         _dike_profile.name = kwargs.get("name", "A default Dike Profile")
         return _dike_profile
 _dike_profile = DikeProfile.from_data_dict(name="Or not so default.")
- ```
+```
 
  - From a 'builder' (or a _FactoryPattern_):
- ```python
+
+```python
  class DikeProfileBuilder:
     def build(self):
         _profile = DikeProfile()
         _profile.name = "A default Dike Profile"
         return _profile
- ```
+```
 
 There are certain libraries that help initializing classes while enforcing its typing. Have a look at [Pydantic](https://pydantic-docs.helpmanual.io/). Keep in mind that when using such libraries you are constrained to their potential bugs / limitations. So you should be responsible on to how to use it (later discussed in the [summary](#summary)).
 
@@ -114,6 +123,7 @@ _point_list = DikeProfileBuilder.get_point_list((4, 2), (2,4))
 
 ### Class methods.
 A class method is similar to a static one. However, despite being technically possible to make them behave identically, a class method is meant to return an instance of the class being invoked.
+
 ```python
 # Do not:
 class DikeProfile:
@@ -131,8 +141,10 @@ class DikeProfile:
         return _dike_profile
 _profile = DikeProfile.from_data((1,2), (3,4))
 ```
+
 ### Overloading methods.
 As in other OO languages, we can also overload methods:
+
 ```python
 class DikeProfile:
     def __str__(self):
@@ -170,6 +182,7 @@ except Exception as exc_info:
 finally:
     ...
 ```
+
 ```python
 from pathlib import Path
 def read_file(file):
@@ -189,23 +202,23 @@ This part ends up being more a responsibility than a mechanism we can build (exc
 * Single responsibility principle (OO).
 * Classes and methods standardization.
     - Use code formatters and related tools, the most simple one `black`.
-    ```bash
+   ```console
     poetry run black .
-    ```
+   ```
     - You can also order your imports with `isort`.
-    ```bash
+   ```console
     poetry run isort .
-    ```
+   ```
 * Descriptive (consistent) variables.
-    ```python
+   ```python
     # Don't
     _mcf = a_calculation_that_happens_somewhere(a,b)
     # Do
     _geometry_area = calculate_geometry(_list_of_points)
-    ```
+   ```
 * Documented code.
     - [Type hinting](https://docs.python.org/3/library/typing.html)
-    ```python
+   ```python
     from __future__ import annotations
 
     from typing import List, Tuple
@@ -245,10 +258,10 @@ This part ends up being more a responsibility than a mechanism we can build (exc
     _dike = DikeProfile.with_data([(1, 2), (2, 3)])
     for point in _dike.points:
         print(point)
-    ```
+   ```
     - Docstrings (pick your preferred format and be __consistent__ about it). When using autoDocstring, you only need to write three " and press enter to generate a template.
 
-    ```python
+   ```python
     class DikeProfile:
         pass
     class DikeReinforcementInput:
@@ -268,7 +281,7 @@ This part ends up being more a responsibility than a mechanism we can build (exc
             ReinforcedDikeProfile: Instance of new reinforced Dike
         """
         pass
-    ```
+   ```
 
 ## Summary
 
