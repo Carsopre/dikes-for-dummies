@@ -9,7 +9,12 @@ _default_input = workflows._default_input
 _dike_keys = ", ".join(_default_input.keys())
 
 
-@click.command()
+@click.group()
+def cli():
+    pass
+
+
+@cli.command(name="plot_profile")
 @click.option(
     "--dike_input",
     nargs=10,
@@ -27,4 +32,4 @@ def plot_profile(dike_input: List[float], outfile: Optional[Path]):
 
 
 if __name__ == "__main__":
-    plot_profile()
+    cli()
