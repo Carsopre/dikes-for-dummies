@@ -65,13 +65,13 @@ However, poetry won't be able to install a package if this requires certain `whe
 A good example is [GDAL](https://gdal.org/).
 To solve this problem the easiest solution when working on a Windows machine is to have a `conda environment` running on the background. Anaconda can install for us mentioned wheel which will allow poetry to add it to our package without further conflicts. Example:
 
-```
+```console
  conda install -c conda-forge gdal=3.0.2
  poetry add gdal
 ```
 An example of a conda environment that requires wheels can be as follows:
 
-```yml
+```yaml
 name: projectwithwheels_env
 channels:
   - defaults
@@ -92,7 +92,7 @@ dependencies:
 
 Let's install the provided environment.yml file and start our poetry project.
 
-```bash
+```console
 conda install env -f environment.yml
 conda activate dikes-for-dummies_env
 poetry init
@@ -106,7 +106,7 @@ __version__ = "0.1.0"
 This can be also done with [commitizen](https://commitizen-tools.github.io/commitizen/). This tool helps us versioning the project and keeping a neat changelog.
 
 Now we can install our package to start working on it
-```bash
+```console
 poetry install
 ```
 

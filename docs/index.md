@@ -14,7 +14,8 @@ For simplicity reasons we recommend having the following installed in your compu
 During the walk-through the chapters, we will see snippets of code that can help the reader build on their own a solution that satisfies the [study case](.\study_case.md). Sometimes the snippets will not be enough, this is totally intended. However, if the reader gets lost contact me for a branch of the source repository that will lead you from that chapter onwards.
 
 To 'take-on' from any chapter branch, you just need to do the following:
-```bash
+
+```console
 conda env create -f environment.yml
 conda activate dikes-for-dummies_env
 poetry install
