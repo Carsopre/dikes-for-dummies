@@ -1,13 +1,4 @@
 # Chapter 06. Creating interfaces.
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 It is time to work on an interface that provides an end user access to our tool when using it from command line, or later as an .exe.
 
 We will just focus on two options.
@@ -75,7 +66,7 @@ To simplify our project structure, we will just create a `main.py` in the _dikes
 ### Creating an endpoint.
 Click provides us with a simple way of processing the information coming from command line and connecting it to our library. 
 
-```bash
+```console
 poetry add click
 ```
 
@@ -113,7 +104,7 @@ if __name__ == "__main__":
 Fortunately for us, `Click` already does the type checking for us. So we can assume that when an outfile parameter is given, then it will be of type `pathlib.Path` as specified in the argument `path_type`.
 
 We can try to run this now:
-```bash
+```console
 python dikesfordummies\main.py plot_profile --help
 ```
 
@@ -139,7 +130,7 @@ if __name__ == "__main__":
 And if we try again the help command the same result should show.
 
 We can try to run this now:
-```bash
+```console
 python dikesfordummies\main.py plot_profile --help
 ```
 
@@ -199,31 +190,33 @@ Building a GUI in QT has its limitations if we compare to other great frameworks
 To simplify this project we will just create the logic in a directory __within__ _dikesfordummies_. In a production project you should try to have at least a separation of concerns such as:
 
 Because we are just _playing around_ we will just create a new level in the project tree such as:
-```
-\dikesfordummies
-    \core
-        \dike
+
+```properties
+    \dikesfordummies
+        \core
+            \dike
+                ...
             ...
-        ...
-        main.py
-    \gui
-        ...
-        main.py
-    __init__.py
-\tests
-    \core
-        ...
-        main.py
-    \gui
-        ...
-        main.py
-    __init__.py
+            main.py
+        \gui
+            ...
+            main.py
+        __init__.py
+    \tests
+        \core
+            ...
+            main.py
+        \gui
+            ...
+            main.py
+        __init__.py
 ```
+
 ### Creating a basic GUI
 
 With QT, all classical components are available. We will an interface that represents the previous endpoint.
 
-```bash
+```console
 poetry add pyqt5
 ```
 

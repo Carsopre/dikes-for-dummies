@@ -1,13 +1,4 @@
 # Chapter 04. The pythonic way.
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 Because we are doing OO in python it is also useful to learn certain Python techniques that can be handy specially when dealing with large amounts of data.
 
 -- "Ask for forgiveness, not for permission" --

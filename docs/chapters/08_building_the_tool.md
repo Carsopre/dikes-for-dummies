@@ -1,14 +1,5 @@
 # Chapter 08. Building the tool
 
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 We come to our last step. We already cover the different types of audiences we may have. But let's revise it from [Chapter 06](./06_creating_interfaces.md#know-your-audience):
 
 | Usage / Requirements | Endpoints | Built | 
@@ -27,19 +18,19 @@ We only require to really build an exe when having a stand alone GUI. However we
 
 Throughout the entire Dikes For Dummies workshop we have been using `Poetry`. If your dependencies are still holding up and your project is well structure you should not have too much troubles [building and publishing](https://python-poetry.org/docs/cli/#build) it. Let's check it.
 
-```bash
+```console
 poetry check
 ```
 > All set!
 
-```bash
+```console
 poetry build & poetry publish
 ```
 > You will be required to authenticate yourself in pypi
 
 Notice that most likely a `dist` directory has been created in your root directory with the wheels to be published. After publishing our package we should be able to add it as a dependency on other projects!
 
-```bash
+```console
 poetry add dikes-for-dummies
 ```
 
@@ -203,7 +194,7 @@ if __name__ == "__main__":
 
 Let's run it!
 
-```bash
+```console
 poetry run python makefile\version_compile.py
 ```
 > After some time you should fin in /dist your DikesForDummies.exe

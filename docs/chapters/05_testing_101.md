@@ -1,17 +1,8 @@
 # Chapter 05. Testing 101
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 We are now going to start writing tests to either verify our current implementations but also to start doing some Test Driven Development.
 
 If you installed the package (`poetry install`) you should have already [pytest](https://docs.pytest.org/en/7.1.x/), otherwise add it to your .toml like follows:
-```
+```console
 poetry add pytest --dev
 ```
 
@@ -23,48 +14,49 @@ Pytest will automatically detect your tests under the following conditions:
 
 ## Building the test structure.
 Like in many other things in Python, there is not just one way to do this. However, my recommendation is to have a test directory under your root project, at the same level of your package, in our case it should look now like this:
-```
-\dikes-for-dummies
-    \docs
-    \dikesfordummies
-        \dike
+
+```properties
+    \dikes-for-dummies
+        \docs
+        \dikesfordummies
+            \dike
+                __init__.py
+                dike_profile.py
+                dike_reinforcement_input.py
+                dike_reinforcement_profile.py
             __init__.py
-            dike_profile.py
-            dike_reinforcement_input.py
-            dike_reinforcement_profile.py
-        __init__.py
-    \tests
-        __init__.py
-    environment.yml
-    pyproject.toml
-    README.md
-    LICENSE
+        \tests
+            __init__.py
+        environment.yml
+        pyproject.toml
+        README.md
+        LICENSE
 ```
 
 As we build up tests in our package I like to 'mirror' the structure in the code directory, so it's easier to understand what is actually being covered. So something like:
 
-```
-\dikes-for-dummies
-    \docs
-    \dikesfordummies
-        \dike
+```properties
+    \dikes-for-dummies
+        \docs
+        \dikesfordummies
+            \dike
+                __init__.py
+                dike_profile.py
+                dike_reinforcement_input.py
+                dike_reinforcement_profile.py
             __init__.py
-            dike_profile.py
-            dike_reinforcement_input.py
-            dike_reinforcement_profile.py
-        __init__.py
-    \tests
-        \dike
+        \tests
+            \dike
+                __init__.py
+                test_dike_profile.py
+                test_dike_reinforcement_input.py
+                test_dike_reinforcement_profile.py
             __init__.py
-            test_dike_profile.py
-            test_dike_reinforcement_input.py
-            test_dike_reinforcement_profile.py
-        __init__.py
-        test_acceptance.py
-    environment.yml
-    pyproject.toml
-    README.md
-    LICENSE
+            test_acceptance.py
+        environment.yml
+        pyproject.toml
+        README.md
+        LICENSE
 ```
 
 ## Creating a test
@@ -91,7 +83,7 @@ In case it is not being display, it is a good occasion to check the python outpu
 
 It is also possible to run the tests via command line:
 
-```
+```console
 poetry run pytest -V
 ```
 
@@ -221,7 +213,7 @@ Pytest also allows us for tear up / tear down fixtures. These are broad, so we w
 ## Workflows on GitHub
 Yoy may find multiple solutions by googling this, but our most common pipeline in Python is something similar to this:
 
-```yml
+```yaml
 name: ci-on-push-and-autoformat
 on:
   pull_request:

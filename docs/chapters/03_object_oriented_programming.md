@@ -1,14 +1,5 @@
 # Chapter 03. Objected Oriented Programming in Python
 
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 We have already seen the perks and pitfalls of Python as a dynamic language and its `duck typing`. Now we will explore both object oriented _foundations_ and _solid_ concepts applied through Python programming.
 
 ## Foundations

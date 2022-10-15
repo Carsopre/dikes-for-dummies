@@ -1,6 +1,8 @@
 site_name: Dikes for dummies documentation
 theme:
   name: material
+  font: 
+    text: Calibri
   language: en
   icon:
     logo: fontawesome/solid/house-tsunami
@@ -23,11 +25,18 @@ theme:
 plugins:
   - search
   - autorefs
-  - with-pdf
+  # - with-pdf
+  - with-pdf:
+      debug_html: true
+      author: Carles S. Soriano Perez
+      custom_template_path: .with_pdf_template
+      exclude_pages: 
+          - 'changelog.md'
+  # - pdf-export
   # - pdf-export:
   #       verbose: true
   #       combined: true
-  #       media_type: print
+        # media_type: print
         # enabled_if_env: ENABLE_PDF_EXPORT
   - mkdocstrings:
       default_handler: python

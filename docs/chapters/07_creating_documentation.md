@@ -1,32 +1,21 @@
 # Chapter 07. Creating documentation
-
-Catching up? Just run the following command in your command line:
-```bash
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
-
 We will create now very simple documentation. What we will do is to generate technical documentation from our `docstrings`, our changelog, and some simple usage instructions
 
 ## Mkdocs
  For this chapter we will only be using [Mkdocs](https://www.mkdocs.org/). As described in their page, Mkdocs creates static HTML pages that can be published anywhere. This can also be integrated in a GitHub workflow
 
 ### Installing the dependencies.
- ```
+```console
  poetry add mkdocs --group dev
  poetry add mkdocs-material --group dev
  poetry add mkdocstrings-python --group dev
- ```
+```
 
 ### Defining a theme.
 
  We will need a configuration file `mkdocs.yml` describing the way of building our documentation and its [theme](https://www.mkdocs.org/user-guide/choosing-your-theme/).
 
- ```yml
+```yaml
 site_name: Dikes for dummies documentation
 theme:
   name: material
@@ -83,16 +72,16 @@ extra:
       link: https://github.com/Carsopre/dikes-for-dummies
       name: Source code
 copyright: Copyright &copy; 2022 Carsopre
- ```
+```
 
 ### Building and serving
 
 It is required to build the documentation in order to serve it
 
- ```bash
+```console
  poetry run mkdocs build
  poetry run mkdocs serve
- ```
+```
  > Your local machine should now work as a localhost for the documentation pages.
 
 ### Adding user's documentation.
@@ -107,7 +96,7 @@ Note that if you already configured commitizen you should have also a `changelog
 
 Creating a technical reference it's easier done than said. Just mirror your solution tree-directory and create one *.md page per module.
 For instance, if we have:
-```
+```properties
 \dikesfordummies
     \dike
         dike_input.py
@@ -121,13 +110,17 @@ And we want to show their docstrings, we will create the following document  `\d
 ## Dike models for the Dikes for Dummies package
 
 ## Dike Profile
+
 ::: dikesfordummies.dike.dike_profile
 
 ## Dike Profile Builder
+
 ::: dikesfordummies.dike.dike_profile_builder
 
 ## Dike Input
+
 ::: dikesfordummies.dike.dike_input
+
 ```
 
 ## GitHub Pages
@@ -136,7 +129,7 @@ If your project is public and documentation built with MkDocs, there is no reaso
 
 ### Workflow
 Create a new workflow in `.github\workflows\` with the settings required to install and run your tool
-```yml
+```yaml
 name: docs
 on:
   push:

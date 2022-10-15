@@ -1,15 +1,5 @@
 # Chapter 02. Never trust the user.
 
-Catching up? Just run the following command in your command line:
-
-```console
-conda env create -f environment.yml
-conda activate dikes-for-dummies_env
-poetry install
-```
-You can follow the contents of this chapter now :)
-
-## Intro
 __Why you should never trust the user and their given input__
 Unlike other OO languages, Python has `duck typing` and is a dynamic language.
 This means that even if you declared in a method that you want an object of type `Banana` you may end up getting `Peanuts` instead.
