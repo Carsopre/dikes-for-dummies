@@ -1,7 +1,7 @@
 from matplotlib import pyplot
 from shapely.geometry import LineString
 
-from dikesfordummies.dike.dike_profile import DikeProfile
+from dikesfordummies.dike.dike_profile_protocol import DikeProfileProtocol
 
 
 def _plot_line(ax, ob, color):
@@ -11,12 +11,12 @@ def _plot_line(ax, ob, color):
         ax.plot(x, y, color=color, linewidth=3, solid_capstyle="round", zorder=1)
 
 
-def plot_profile(dike_profile: DikeProfile) -> pyplot:
+def plot_profile(dike_profile: DikeProfileProtocol) -> pyplot:
     """
-    Plots a dike profile using matplotlib and a predefined color.
+    Plots a dike profile (`DikeProfileProtocol`) using matplotlib and a predefined color.
 
     Args:
-        dike_profile (DikeProfile): Profile to plot.
+        dike_profile (DikeProfileProtocol): Profile to plot.
 
     Returns:
         pyplot: Plot containing a graphical interpretation of the Dike's profile geometry.
