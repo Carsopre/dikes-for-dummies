@@ -1,3 +1,9 @@
+## v0.8.0 (2022-10-15)
+
+### Feat
+
+- **Chapter 08**: Added expected data from Chapter 07. (#8)
+
 ## v0.7.0 (2022-10-15)
 
 ### Feat
