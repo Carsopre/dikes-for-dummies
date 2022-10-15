@@ -12,6 +12,7 @@ repository = "https://github.com/Carsopre/dikes-for-dummies"
 [tool.poetry.dependencies]
 python = ">=3.10, <3.12"
 shapely = "^1.8.5.post1"
+matplotlib = "^3.6.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
