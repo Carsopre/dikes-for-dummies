@@ -8,6 +8,8 @@ readme = "README.md"
 packages = [{include = "dikesfordummies"}]
 repository = "https://github.com/Carsopre/dikes-for-dummies"
 
+[tool.poetry.scripts]
+build-exe = "makefile.version_compile:run_compilation"
 
 [tool.poetry.dependencies]
 python = ">=3.10, <3.12"
@@ -25,6 +27,7 @@ pytest-cov = "^4.0.0"
 mkdocs = "^1.4.0"
 mkdocs-material = "^8.5.6"
 mkdocstrings-python = "^0.7.1"
+pyinstaller = "^5.5"
 
 [tool.black]
 line-length = 88
