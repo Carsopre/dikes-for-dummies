@@ -17,7 +17,7 @@ class DikeProfileBuilder:
         ValueError: When trying to `build` without a valid `DikeInput`.
 
     Returns:
-        DikeProfileBuilder: Builder.
+        `DikeProfileBuilder`: Builder.
     """
 
     dike_input: DikeInput
