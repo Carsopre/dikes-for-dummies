@@ -1,3 +1,9 @@
+## v0.6.0 (2022-10-14)
+
+### Feat
+
+- **tests**: Added tests expected to be done in previous chapter (#6)
+
 ## v0.5.0 (2022-10-14)
 
 ### Feat
