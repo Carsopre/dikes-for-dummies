@@ -1,12 +1,11 @@
 # Chapter 03. Objected Oriented Programming in Python
 
 Catching up? Just run the following command in your command line:
-```
+```bash
 conda env create -f environment.yml
 conda activate dikes-for-dummies_env
 poetry install
 ```
-
 You can follow the contents of this chapter now :)
 
 ## Intro
