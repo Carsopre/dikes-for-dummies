@@ -11,7 +11,7 @@ For simplicity reasons we recommend having the following installed in your compu
 
 ## Study case
 
-During the walk-through the chapters, we will see snippets of code that can help the reader build on their own a solution that satisfies the [study case](docs\study_case.md). Sometimes the snippets will not be enough, this is totally intended. However, if the reader gets lost contact me for a branch of the source repository that will lead you from that chapter onwards.
+During the walk-through the chapters, we will see snippets of code that can help the reader build on their own a solution that satisfies the [study case](.\study_case.md). Sometimes the snippets will not be enough, this is totally intended. However, if the reader gets lost contact me for a branch of the source repository that will lead you from that chapter onwards.
 
 To 'take-on' from any chapter branch, you just need to do the following:
 ```bash
@@ -21,11 +21,11 @@ poetry install
 ```
 
 ## Chapters and intended order:
-1. [Project setup](docs\chapters\01_project_setup.md)
-2. [Never trust the user](docs\chapters\02_never_trust_the_user.md)
-3. [Object Oriented Programming](docs\chapters\03_objected_oriented_programming.md)
-4. [The pythonic way](docs\chapters\04_the_pythonic_way.md)
-5. [Testing 101](docs\chapters\05_testing_101.md)
-6. [Creating interfaces](docs\chapters\06_creating_interfaces.md)
-7. [Creating documentaiton](docs\chapters\07_creating_documentation.md)
-8. [Building the tool](docs\chapters\08_building_the_tool.md)
+1. [Project setup](.\chapters\01_project_setup.md)
+2. [Never trust the user](.\chapters\02_never_trust_the_user.md)
+3. [Object Oriented Programming](.\chapters\03_object_oriented_programming.md)
+4. [The pythonic way](.\chapters\04_the_pythonic_way.md)
+5. [Testing 101](.\chapters\05_testing_101.md)
+6. [Creating interfaces](.\chapters\06_creating_interfaces.md)
+7. [Creating documentaiton](.\chapters\07_creating_documentation.md)
+8. [Building the tool](.\chapters\08_building_the_tool.md)
