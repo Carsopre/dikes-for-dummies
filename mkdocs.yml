@@ -23,6 +23,12 @@ theme:
 plugins:
   - search
   - autorefs
+  - with-pdf
+  # - pdf-export:
+  #       verbose: true
+  #       combined: true
+  #       media_type: print
+        # enabled_if_env: ENABLE_PDF_EXPORT
   - mkdocstrings:
       default_handler: python
       handlers:
