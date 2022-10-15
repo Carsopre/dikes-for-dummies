@@ -23,5 +23,15 @@
             ],
             "justMyCode": true,
         },
+        {
+            "name": "Run GUI Main window",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}\\dikesfordummies\\gui\\main.py",
+            "args": [],
+            "justMyCode": true,
+        },
     ]
 }
