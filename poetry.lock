@@ -504,7 +504,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10, <3.12"
-content-hash = "c569f93893950ca31b8b1ff990b8cc84a4f3ef66c085662b600cf2ce3066988c"
+content-hash = "1a8e17a2d083a62679897c8c55a376bd2ef16fb678dd24878024fa69215a1bf1"
 
 [metadata.files]
 argcomplete = [
