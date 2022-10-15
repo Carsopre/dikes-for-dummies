@@ -1,0 +1,56 @@
+site_name: Dikes for dummies documentation
+theme:
+  name: material
+  language: en
+  icon:
+    logo: fontawesome/solid/house-tsunami
+  palette:
+    - scheme: dummies
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_root_toc_entry: false
+            show_source: true
+            show_signature_annotations: true
+            heading_level: 3
+            show_category_heading: false
+            group_by_category: false
+          selection:
+            inherited_members: false
+
+      custom_templates: templates
+watch:
+    - dikesfordummies/
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: true
+repo_url: https://github.com/Carsopre/dikes-for-dummies
+repo_name: carsopre/dikes-for-dummies
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Carsopre/dikes-for-dummies
+      name: Source code
+copyright: Copyright &copy; 2022 Carsopre
