@@ -103,25 +103,7 @@ For instance, if we have:
         dike_profile.py
         dike_profile_builder.py
 ```
-
 And we want to show their docstrings, we will create the following document  `\docs\reference\dike.md` containing:
-
-```markdown
-## Dike models for the Dikes for Dummies package
-
-## Dike Profile
-
-::: dikesfordummies.dike.dike_profile
-
-## Dike Profile Builder
-
-::: dikesfordummies.dike.dike_profile_builder
-
-## Dike Input
-
-::: dikesfordummies.dike.dike_input
-
-```
 
 ## GitHub Pages
 
@@ -129,6 +111,7 @@ If your project is public and documentation built with MkDocs, there is no reaso
 
 ### Workflow
 Create a new workflow in `.github\workflows\` with the settings required to install and run your tool
+
 ```yaml
 name: docs
 on:
@@ -167,7 +150,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - run: poetry run mkdocs gh-deploy --force
-
 ```
 
 ### Settings
