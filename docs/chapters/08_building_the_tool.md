@@ -21,11 +21,13 @@ Throughout the entire Dikes For Dummies workshop we have been using `Poetry`. If
 ```console
 poetry check
 ```
+
 > All set!
 
 ```console
 poetry build & poetry publish
 ```
+
 > You will be required to authenticate yourself in pypi
 
 Notice that most likely a `dist` directory has been created in your root directory with the wheels to be published. After publishing our package we should be able to add it as a dependency on other projects!
@@ -44,7 +46,7 @@ In theory, the following should be possible:
 * Building only the CLI: `poetry run pyinstaller dikesfordummies\main.py`
 * Building with GUI: `poetry run pyinstaller dikesfordummies\gui\main.py`
 
-However, it is entirely possible that as more complex your repository starts to be, the more dependencies you need to specify yourself. This might result on you having to create your custom `main.spec`file and your own compilation script for `pyinstaller`. We will describe these steps in the next sections. For that, lets create both files in a `\makefile` dir in our root.
+However, it is entirely possible that as more complex your repository starts to be, the more dependencies you need to specify by yourself. This might result on you having to create your custom `main.spec`file and your own compilation script for `pyinstaller`. We will describe these steps in the next sections. For that, lets create both files in a `\makefile` dir in our root.
 
 ### __init__.py
 
@@ -60,49 +62,7 @@ _dfd_version = dikesfordummies.__version__
 ```
 
 ### main.spec
-
-```python
-# -*- mode: python -*-
-from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs
-import glob, os
-from pathlib import Path
-from makefile import _makedir
-
-_conda_env = os.environ['CONDA_PREFIX']
-
-_root_dir = _makedir.parent
-_dfd_src = _root_dir / "dikesfordummies"
-
-a = Analysis([r"..\\dikesfordummies\\gui\\main.py"],
-             pathex=['.', str(_dfd_src), _conda_env],
-             hiddenimports=[],
-             hookspath=None,
-             runtime_hooks=None,
-             datas=[],
-             binaries= collect_dynamic_libs("rtree"),)
-			 
-for d in a.datas:
-    if 'pyconfig' in d[0]: 
-        a.datas.remove(d)
-        break
-
-print("Generate pyz and exe")
-pyz = PYZ(a.pure)
-exe = EXE(pyz,
-          a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
-          name='DikesForDummies.exe',
-          debug=False,
-          strip=False,
-          upx=True,
-          console=False,
-		#   icon=f"",
-		#   version=str(_makedir / 'version.txt')
-        )
-
-```
+Skipped for syntax reasons
 
 ### Defining our custom compiler
 
@@ -119,7 +79,6 @@ from makefile import _dfd_version, _makedir
 # Run insted 'cz bump --changelog' and then 'git push --tags' and 'git push'.
 _version_file = _makedir / "version.txt"
 _main_spec = _makedir / "main.spec"
-
 
 def read_revision():
     # date
@@ -149,9 +108,7 @@ def read_revision():
             + "u'040904B0',\n"
             + "[StringStruct(u'CompanyName', u'Dummies'),\n"
             + "StringStruct(u'FileDescription', u'DikesForDummies'),\n"
-            +
-            # "StringStruct(u'FileVersion', u'" + str(version) + "'),\n" +
-            "StringStruct(u'InternalName', u'DikesForDummies'),\n"
+            + "StringStruct(u'InternalName', u'DikesForDummies'),\n"
             + "StringStruct(u'LegalCopyright', u'Dummies"
             + r" \xae "
             + str(now.year)
@@ -167,7 +124,6 @@ def read_revision():
             + ")"
         )
 
-
 def compile_code():
     def _remove_if_exists(dir_name: str):
         _dir_to_remove = _makedir.parent / dir_name
@@ -181,15 +137,12 @@ def compile_code():
     os.system(f"{_py_installer_exe} --clean {_main_spec}")
     _version_file.unlink()
 
-
 def run_compilation():
     read_revision()
     compile_code()
 
-
 if __name__ == "__main__":
     run_compilation()
-
 ```
 
 Let's run it!
@@ -197,7 +150,8 @@ Let's run it!
 ```console
 poetry run python makefile\version_compile.py
 ```
-> After some time you should fin in /dist your DikesForDummies.exe
+
+> After some time you should find in /dist your DikesForDummies.exe
 
 ### Extending our poetry config
 
@@ -208,8 +162,9 @@ We can create a 'shortcut' to our compilation script so that with a single `poet
 build-exe = "makefile.version_compile:run_compilation"
 ```
 
-
 ## Summary
 
 We have finaly covered all steps required to build an MVP. There are many different ways to come to this final step, however, that is the nice challenge about python. Explore all its possibilities and don't be shy about asking or sharing your progress. 
 Happy coding!
+
+
