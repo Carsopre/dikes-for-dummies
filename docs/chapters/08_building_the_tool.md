@@ -62,7 +62,46 @@ _dfd_version = dikesfordummies.__version__
 ```
 
 ### main.spec
-Skipped for syntax reasons
+``
+# -*- mode: python -*-
+from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs
+import glob, os
+from pathlib import Path
+from makefile import _makedir
+
+_conda_env = os.environ['CONDA_PREFIX']
+
+_root_dir = _makedir.parent
+_dfd_src = _root_dir / "dikesfordummies"
+
+a = Analysis([r"..\\dikesfordummies\\gui\\main.py"],
+             pathex=['.', str(_dfd_src), _conda_env],
+             hiddenimports=[],
+             hookspath=None,
+             runtime_hooks=None,
+             datas=[],
+             binaries= collect_dynamic_libs("rtree"),)
+			 
+for d in a.datas:
+    if 'pyconfig' in d[0]: 
+        a.datas.remove(d)
+        break
+
+print("Generate pyz and exe")
+pyz = PYZ(a.pure)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          name='DikesForDummies.exe',
+          debug=False,
+          strip=False,
+          upx=True,
+          console=False,
+        )
+``
+
 
 ### Defining our custom compiler
 

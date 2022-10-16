@@ -105,6 +105,21 @@ For instance, if we have:
 ```
 And we want to show their docstrings, we will create the following document  `\docs\reference\dike.md` containing:
 
+``
+# Dike models for the Dikes for Dummies package
+Technical documentation for the classes and methods within the /dike module.
+
+## Dike Profile
+::: dikesfordummies.dike.dike_profile
+
+## Dike Profile Builder
+::: dikesfordummies.dike.dike_profile_builder
+
+## Dike Input
+::: dikesfordummies.dike.dike_input
+``
+
+
 ## GitHub Pages
 
 If your project is public and documentation built with MkDocs, there is no reason why you should not want to do this, as it's easy and fast.

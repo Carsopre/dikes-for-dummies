@@ -2,7 +2,7 @@ site_name: Dikes for dummies documentation
 theme:
   name: material
   font: 
-    text: Calibri
+    text: Verdana
   language: en
   icon:
     logo: fontawesome/solid/house-tsunami
@@ -29,7 +29,7 @@ plugins:
   - with-pdf:
       debug_html: true
       author: Carles S. Soriano Perez
-      custom_template_path: .with_pdf_template
+      custom_template_path: .with_pdf_template/
       exclude_pages: 
           - 'changelog.md'
   # - pdf-export
