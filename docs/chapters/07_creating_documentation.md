@@ -170,7 +170,7 @@ jobs:
 ### Settings
 We need to enable the feature in GitHub:
 `settings -> Pages -> Build and Deployment`
-* Source `deploy from a branch`
-* Branch `gh-pages -> / (root)` (you may require to do a first build).
+- Source `deploy from a branch`
+- Branch `gh-pages -> / (root)` (you may require to do a first build).
 
 If everything went well you should be able to access your built documentation in https://{your-organization}.github.io/{your-repo-name}/

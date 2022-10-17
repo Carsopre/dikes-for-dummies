@@ -1,8 +1,8 @@
 site_name: Dikes for dummies documentation
 theme:
   name: material
-  # font: 
-  #   text: Roboto
+  font: 
+    text: Roboto
   language: en
   icon:
     logo: fontawesome/solid/house-tsunami
@@ -32,9 +32,12 @@ plugins:
       exclude_pages: 
           - 'changelog/'
           - 'reference/'
-      output_path: ../dikesfordummies_manual.pdf
+      output_path: ..\dikesfordummies_manual.pdf
       cover_title: Dikes For Dummies
       cover_subtitle: A Python Object Oriented course.
+      cover_logo: .\with_pdf_templates\iDeltares.png
+      custom_template_path: docs\with_pdf_templates\
+
   - mkdocstrings:
       default_handler: python
       handlers:

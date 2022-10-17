@@ -3,27 +3,27 @@
 We have already seen the perks and pitfalls of Python as a dynamic language and its `duck typing`. Now we will explore both object oriented _foundations_ and _solid_ concepts applied through Python programming.
 
 ## Foundations
-* [Encapsulation](#encapsulation).
-    * Define public, protected and private data.
-    * Public data can be accessed ‘from the outside’.
-    * Protected data only internally (when using inheritance).
-    * Private data only in the declared class.
-* [Inheritance](#inheritance) and [abstractions](#abstractions):
-    * Definition of generic functionality and properties in the base class.
-    * Concrete methods in the inherited classes.
-    * Abstract classes need a concrete inherited class (specialisation).
-    * A class can inherit from an abstract class or another concrete class.
-* [Polymorphism](#polymorphism).
-    * The same interface applies for different data types or classes
-    * Can be applied to classes (through inheritance) and methods.
-* Aggregation and composition.
-    * **Aggregation**: the associated objects do not need each other ‘to exist’.
-    * **Composition**: the associated objects ‘need’ each other to ‘coexist’. The main object owns
+- [Encapsulation](#encapsulation).
+    - Define public, protected and private data.
+    - Public data can be accessed ‘from the outside’.
+    - Protected data only internally (when using inheritance).
+    - Private data only in the declared class.
+- [Inheritance](#inheritance) and [abstractions](#abstractions):
+    - Definition of generic functionality and properties in the base class.
+    - Concrete methods in the inherited classes.
+    - Abstract classes need a concrete inherited class (specialisation).
+    - A class can inherit from an abstract class or another concrete class.
+- [Polymorphism](#polymorphism).
+    - The same interface applies for different data types or classes
+    - Can be applied to classes (through inheritance) and methods.
+- Aggregation and composition.
+    - **Aggregation**: the associated objects do not need each other ‘to exist’.
+    - **Composition**: the associated objects ‘need’ each other to ‘coexist’. The main object owns
 
 ### Encapsulation
 In python encapsulation does not really exist, think of it more like a 'rule of conduct'. We identify protected (internal) methods and  parameters with a simple underscore `_` and private with double `__` so:
-* `def _get_my_variable(...) -> Any` is meant to be used only while developing in the tool. Preferrebly within an instanced object.
-* `def __get_my_variable(...) -> Any` is only meant to be used within its class / module. And not to be exposed.
+- `def _get_my_variable(...) -> Any` is meant to be used only while developing in the tool. Preferrebly within an instanced object.
+- `def __get_my_variable(...) -> Any` is only meant to be used within its class / module. And not to be exposed.
 
 ```python
 class BasicEncapsulation:
@@ -129,7 +129,7 @@ By creating 'builders' and leaving the classes only as datastructures we reduce 
 ### Open for extension, closed for modification.
 A class should be extendable without modifying the class itself. Whenever you start having an `if-else` to differenciate behaviors, try to create a new concrete class.
 
-* Given:
+- Given:
 ```python
 class DikeMaterial:
     def __init__(self, cost: float, material_type: str):
@@ -149,7 +149,8 @@ _material_list = [DikeMaterial(2.4, "sand"), DikeMaterial(4.2, "clay")]
 get_total_cost(_material_list)
 
 ```
-* We can do instead: 
+
+- We can do instead: 
 ```python
 class DikeMaterial:
     def __init__(self, price: float):

@@ -43,8 +43,8 @@ This step will require (a bit) more of work. First we require the [`pyinstaller`
 ### An ideal world
 In theory, the following should be possible:
 
-* Building only the CLI: `poetry run pyinstaller dikesfordummies\main.py`
-* Building with GUI: `poetry run pyinstaller dikesfordummies\gui\main.py`
+- Building only the CLI: `poetry run pyinstaller dikesfordummies\main.py`
+- Building with GUI: `poetry run pyinstaller dikesfordummies\gui\main.py`
 
 However, it is entirely possible that as more complex your repository starts to be, the more dependencies you need to specify by yourself. This might result on you having to create your custom `main.spec`file and your own compilation script for `pyinstaller`. We will describe these steps in the next sections. For that, lets create both files in a `\makefile` dir in our root.
 

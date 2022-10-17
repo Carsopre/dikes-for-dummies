@@ -48,6 +48,7 @@ As can be seen, we are declaring already the usage of certain python libraries s
 It is also advised to include the `.vscode` directory in the .gitignore file.
 
 Some recommended plugins (extensions) I usually have always on in VSCode:
+
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python). Basically the only plugging that is non-officially **required** to code in Python. It will help you with linting, debugging, code-formatting, refactor, etc.
 - [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring). A **must** for automatically generating docstring headers anywhere in your code.
 - [Lorem ipsum](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum). Very handy to generate texts for testing purposes.
@@ -113,6 +114,7 @@ poetry install
 ## Documentation.
 There are as many documentation packages as you  may imagine. But of course you want to use the most popular ones to ensure easy 'troubleshooting' when problems occur.
 Some commonly used are:
+
 - [Sphinx](https://www.sphinx-doc.org/en/master/). Easy to deploy and quite broadly used in pypi packages.
 - [Mkdocs](https://www.mkdocs.org/). Easy to use as it follows very clear structures and documentation is written with markdown language.
 
@@ -121,10 +123,12 @@ At the same time, you may chose to generate documentation and publish it in page
 
 ## Publishing / Delivering.
 Last, the ultimate goal of creating a product is to deliver it. We have several options:
+
 - Create a pypi package. Users can import our package through `pip` or `poetry`. Building the package and pushing it to pypi it's relatively easy with `poetry`.
 - Create an .exe. With the help of packages such as `pyinstaller` we can easily achieve this.
 
 All of the above are, however, not exclusive. We need to consider that our package will have different audiences that will use it in different manners:
+
 - as sandbox (think of developers extending the project)
 - as a library (pypi package or [directly from GitHub](https://stackoverflow.com/questions/20101834/pip-install-from-git-repo-branch/20101940#20101940)).
 - as an endpoint tool (think of an exe with limited workflows):

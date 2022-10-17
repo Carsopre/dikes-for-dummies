@@ -1094,7 +1094,7 @@ test = ["pytest"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10, <3.12"
-content-hash = "90963a88ced4635d1229c3922ec6e4a9f8bda7fb9a164f6cae91e81d0dcc7f89"
+content-hash = "1caa117d8ade754d072c9cc19b9f2684ac7d3183e5805c11c46f870389b0ee46"
 
 [metadata.files]
 altgraph = [

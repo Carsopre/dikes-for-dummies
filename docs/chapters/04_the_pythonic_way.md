@@ -92,7 +92,7 @@ assert len(_points) == 0
 Very helpful in many ways, you can use it to store any kind of callable, iterable or python object and iterate over the entire collection.
 
 Some basic snippets:
-* Declaring a dictionary:
+- Declaring a dictionary:
     ```python
     simple_dict = {"a": 123}
     # or
@@ -100,7 +100,7 @@ Some basic snippets:
     # but for both is possible:
     simple_dict["b"] = 456
     ```
-* Accessing a dictionary:
+- Accessing a dictionary:
     ```python
     assert simple_dict.keys() == ["a", "b"]
     assert simple_dict.values() == [123, 456]
@@ -110,7 +110,7 @@ Some basic snippets:
     # But this don't:
     _c_value = simple_dict.get("c", None)
     ```
-* Providing the contents of a dictionary:
+- Providing the contents of a dictionary:
     ```python
     _profile_data = dict(points=_points, name="A Test Dike")
     class DikeProfile:
@@ -123,7 +123,7 @@ Some basic snippets:
 
     _profile = DikeProfile(**_profile_data)
     ```
-* Assigning the values of a dictionary directly to a class:
+- Assigning the values of a dictionary directly to a class:
     ```python
     class DikeProfile:
         points: List[Point]
@@ -207,4 +207,3 @@ def run(self):
             logging.info(f"Error during runner execution {exc}")
             ...
 ```
-

@@ -61,7 +61,7 @@ class DikeProfile:
         self.name = "A default Dike Profile"
 _dike_profile = DikeProfile()
 ```
- - From a class method (later further explained):
+- From a class method (later further explained):
 
 ```python
 class DikeProfile:
@@ -73,7 +73,7 @@ class DikeProfile:
 _dike_profile = DikeProfile.from_data_dict(name="Or not so default.")
 ```
 
- - From a 'builder' (or a _FactoryPattern_):
+- From a 'builder' (or a _FactoryPattern_):
 
 ```python
  class DikeProfileBuilder:
@@ -188,9 +188,9 @@ def read_file(file):
 
 ## Clean code (or the most effective ways to make it clean).
 This part ends up being more a responsibility than a mechanism we can build (except for certain code formatters.) The first advice, is to adhere to the following:
-* Dry code.
-* Single responsibility principle (OO).
-* Classes and methods standardization.
+- Dry code.
+- Single responsibility principle (OO).
+- Classes and methods standardization.
     - Use code formatters and related tools, the most simple one `black`.
    ```console
     poetry run black .
@@ -199,14 +199,14 @@ This part ends up being more a responsibility than a mechanism we can build (exc
    ```console
     poetry run isort .
    ```
-* Descriptive (consistent) variables.
+- Descriptive (consistent) variables.
    ```python
     # Don't
     _mcf = a_calculation_that_happens_somewhere(a,b)
     # Do
     _geometry_area = calculate_geometry(_list_of_points)
    ```
-* Documented code.
+- Documented code.
     - [Type hinting](https://docs.python.org/3/library/typing.html)
    ```python
     from __future__ import annotations
@@ -278,6 +278,7 @@ This part ends up being more a responsibility than a mechanism we can build (exc
 In this chapter we have seen that in Python we can still code in an effective Object Oriented way.
 
 However, as mentioned, because of Python being a dynamic language, and the ways of distributing the repository, we need to consider also how to handle potential errors in the code and / or users' input. Let's analyze the options:
+
 1. As a package library (pip) or sandbox. 
     1. The user is an 'expert' or a 'developer'. 
     2. The code contains type-hints and tests ensuring the correct functioning.
