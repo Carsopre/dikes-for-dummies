@@ -105,7 +105,7 @@ For instance, if we have:
 ```
 And we want to show their docstrings, we will create the following document  `\docs\reference\dike.md` containing:
 
-``
+```markdown
 # Dike models for the Dikes for Dummies package
 Technical documentation for the classes and methods within the /dike module.
 
@@ -117,7 +117,7 @@ Technical documentation for the classes and methods within the /dike module.
 
 ## Dike Input
 ::: dikesfordummies.dike.dike_input
-``
+```
 
 
 ## GitHub Pages

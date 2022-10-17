@@ -62,7 +62,7 @@ _dfd_version = dikesfordummies.__version__
 ```
 
 ### main.spec
-``
+```python
 # -*- mode: python -*-
 from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs
 import glob, os
@@ -100,7 +100,7 @@ exe = EXE(pyz,
           upx=True,
           console=False,
         )
-``
+```
 
 
 ### Defining our custom compiler

@@ -192,7 +192,7 @@ toml = ["tomli"]
 name = "cssselect2"
 version = "0.7.0"
 description = "CSS selectors for Python ElementTree"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -940,7 +940,7 @@ tests = ["pytest", "pytest-cov"]
 name = "tinycss2"
 version = "1.1.1"
 description = "A tiny CSS parser"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1033,7 +1033,7 @@ test = ["coverage[toml]", "pytest", "pytest-cov", "pytest-flake8", "pytest-isort
 name = "webencodings"
 version = "0.5.1"
 description = "Character encoding aliases for legacy web content"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -1051,7 +1051,7 @@ test = ["pytest"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10, <3.12"
-content-hash = "b43d4edc47821057300443f93919f591dc127da1db67f0745128c31b7ea31c07"
+content-hash = "809ffd77ba7cf3db9d78b001a2e43ad37921e9ae0d6ed4f66db4d29843092e91"
 
 [metadata.files]
 altgraph = [

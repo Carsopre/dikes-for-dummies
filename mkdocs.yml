@@ -1,8 +1,8 @@
 site_name: Dikes for dummies documentation
 theme:
   name: material
-  font: 
-    text: Verdana
+  # font: 
+  #   text: Roboto
   language: en
   icon:
     logo: fontawesome/solid/house-tsunami
@@ -25,19 +25,13 @@ theme:
 plugins:
   - search
   - autorefs
-  # - with-pdf
   - with-pdf:
-      debug_html: true
+      # debug_html: true
+      verbose: false
       author: Carles S. Soriano Perez
-      custom_template_path: .with_pdf_template/
       exclude_pages: 
           - 'changelog.md'
-  # - pdf-export
-  # - pdf-export:
-  #       verbose: true
-  #       combined: true
-        # media_type: print
-        # enabled_if_env: ENABLE_PDF_EXPORT
+      output_path: ../dikesfordummies_manual.pdf
   - mkdocstrings:
       default_handler: python
       handlers:
