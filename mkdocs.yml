@@ -26,12 +26,15 @@ plugins:
   - search
   - autorefs
   - with-pdf:
-      # debug_html: true
+      debug_html: true
       verbose: false
       author: Carles S. Soriano Perez
       exclude_pages: 
-          - 'changelog.md'
+          - 'changelog/'
+          - 'reference/'
       output_path: ../dikesfordummies_manual.pdf
+      cover_title: Dikes For Dummies
+      cover_subtitle: A Python Object Oriented course.
   - mkdocstrings:
       default_handler: python
       handlers:
@@ -46,7 +49,7 @@ plugins:
           selection:
             inherited_members: false
 
-      custom_templates: templates
+      # custom_templates: templates
 watch:
     - dikesfordummies/
 markdown_extensions:

@@ -9,9 +9,9 @@ For simplicity reasons we recommend having the following installed in your compu
 * [Visual Studio Code](https://code.visualstudio.com/). (Easy to install through Anaconda suite). 
     * Other IDEs like PyCharm are totally acceptable, however the debugging steps described in the chapters are aimed for VSCode.
 
-## Study case
+## Following from a chapter.
 
-During the walk-through the chapters, we will see snippets of code that can help the reader build on their own a solution that satisfies the [study case](.\study_case.md). Sometimes the snippets will not be enough, this is totally intended. However, if the reader gets lost contact me for a branch of the source repository that will lead you from that chapter onwards.
+During the walk-through the chapters, we will see snippets of code that can help the reader build on their own a solution that satisfies the [study case](.\study_case.md). Sometimes the snippets will not be enough, this is intended. However, if the reader gets lost they can check out the corresponding branch for each chapter.
 
 To 'take-on' from any chapter branch, you just need to do the following:
 
@@ -20,13 +20,3 @@ conda env create -f environment.yml
 conda activate dikes-for-dummies_env
 poetry install
 ```
-
-## Chapters and intended order:
-1. [Project setup](.\chapters\01_project_setup.md)
-2. [Never trust the user](.\chapters\02_never_trust_the_user.md)
-3. [Object Oriented Programming](.\chapters\03_object_oriented_programming.md)
-4. [The pythonic way](.\chapters\04_the_pythonic_way.md)
-5. [Testing 101](.\chapters\05_testing_101.md)
-6. [Creating interfaces](.\chapters\06_creating_interfaces.md)
-7. [Creating documentaiton](.\chapters\07_creating_documentation.md)
-8. [Building the tool](.\chapters\08_building_the_tool.md)

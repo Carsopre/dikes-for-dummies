@@ -32,6 +32,8 @@ pyinstaller = "^5.5"
 mkdocs-pdf-export-plugin = "^0.5.10"
 mkdocs-with-pdf = "^0.9.3"
 weasyprint = "^56.1"
+cairocffi = "^1.4.0"
+cairosvg = "^2.5.2"
 
 [tool.black]
 line-length = 88
