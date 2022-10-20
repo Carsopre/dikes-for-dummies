@@ -35,7 +35,6 @@ plugins:
       output_path: ..\dikesfordummies_manual.pdf
       cover_title: Dikes For Dummies
       cover_subtitle: A Python Object Oriented course.
-      cover_logo: 'docs/with_pdf_templates/iDeltares.png'
       custom_template_path: docs\with_pdf_templates\
 
   - mkdocstrings:

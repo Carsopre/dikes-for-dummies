@@ -5,3 +5,10 @@
     --md-code-hl-number-color: #0EBBF0;
     --md-code-hl-special-color: #080C80;
 }
+
+/* Indentation. */
+div.doc-contents:not(.first) {
+  padding-left: 25px;
+  border-left: 4px solid rgba(230, 230, 230);
+  margin-bottom: 80px;
+}
