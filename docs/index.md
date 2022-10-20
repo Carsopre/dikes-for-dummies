@@ -6,12 +6,9 @@ Dikes for dummies is a "fast" Python course that navigates the creation of a Min
 For simplicity reasons we recommend having the following installed in your computer:
 
 - [Anaconda](https://www.anaconda.com/) latest version (Python >= 3.9).
-
-  - It is suggested to include it in the system's Path to operate fully through console.
-
+      - It is suggested to include it in the system's Path to operate fully through console.
 - [Visual Studio Code](https://code.visualstudio.com/). (Easy to install through Anaconda suite). 
-
-  - Other IDEs like PyCharm are totally acceptable, however the debugging steps described in the chapters are aimed for VSCode.
+      - Other IDEs like PyCharm are totally acceptable, however the debugging steps described in the chapters are aimed for VSCode.
 
 ## Following from a chapter.
 

@@ -30,12 +30,12 @@ plugins:
       verbose: false
       author: Carles S. Soriano Perez
       exclude_pages: 
-          - 'changelog/'
+          - 'changelog.html'
           - 'reference/'
       output_path: ..\dikesfordummies_manual.pdf
       cover_title: Dikes For Dummies
       cover_subtitle: A Python Object Oriented course.
-      cover_logo: .\with_pdf_templates\iDeltares.png
+      cover_logo: 'docs/with_pdf_templates/iDeltares.png'
       custom_template_path: docs\with_pdf_templates\
 
   - mkdocstrings:
@@ -53,6 +53,7 @@ plugins:
             inherited_members: false
 
       # custom_templates: templates
+use_directory_urls: false
 watch:
     - dikesfordummies/
 markdown_extensions:
@@ -64,8 +65,11 @@ markdown_extensions:
 repo_url: https://github.com/Carsopre/dikes-for-dummies
 repo_name: carsopre/dikes-for-dummies
 extra:
+  authoremail: carles.sorianoperez@deltares.nl
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Carsopre/dikes-for-dummies
       name: Source code
 copyright: Copyright &copy; 2022 Carsopre
+extra_css:
+  - github/styles.css
