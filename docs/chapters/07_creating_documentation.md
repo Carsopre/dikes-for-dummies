@@ -140,12 +140,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: ['3.10']
+          python-version: '3.10'
 
       - name: Run image
         uses: abatilo/actions-poetry@v2.0.0
         with:
-          poetry-version: 1.1.8
+          poetry-version: 1.2.2
       - name: Cache Poetry virtualenv
         uses: actions/cache@v1
         id: cache
