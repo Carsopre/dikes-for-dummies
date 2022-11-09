@@ -7,6 +7,7 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "dikesfordummies"}]
 repository = "https://github.com/Carsopre/dikes-for-dummies"
+documentation = "https://carsopre.github.io/dikes-for-dummies/"
 
 [tool.poetry.scripts]
 build-exe = "makefile.version_compile:run_compilation"

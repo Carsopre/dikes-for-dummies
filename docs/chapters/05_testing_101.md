@@ -8,6 +8,7 @@ poetry add pytest --dev
 
 ## Pre-conditions.
 Pytest will automatically detect your tests under the following conditions:
+
 - they are in the tests directory.
 - test files start with test_ prefix.
 - test methods start with prefix test_

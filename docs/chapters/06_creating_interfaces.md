@@ -2,6 +2,7 @@
 It is time to work on an interface that provides an end user access to our tool when using it from command line, or later as an .exe.
 
 We will just focus on two options.
+
 - CLI - like, using the [click](https://click.palletsprojects.com/en/8.1.x/) library.
 - GUI - like, using the [QT](https://www.qt.io/qt-for-python) library.
 

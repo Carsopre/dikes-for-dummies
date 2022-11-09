@@ -34,7 +34,7 @@ p1, p2 , p3= get_dike_profile_points(3,4,5)
 As can be seen, we can collect the parameters declaring them explicetly or by using the parameters `*args` or `**kwargs`.
 
 ## Classes in Python
-Official reference https://docs.python.org/3/tutorial/classes.html.
+[Official reference](https://docs.python.org/3/tutorial/classes.html).
 
 Creating classes is very simple, you just need to add the `class` type at its begining:
 
