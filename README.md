@@ -1,3 +1,4 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Carsopre/dikes-for-dummies)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Carsopre/dikes-for-dummies)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
