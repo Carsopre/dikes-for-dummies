@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "bierner.markdown-preview-github-styles",
+        "tyriar.lorem-ipsum",
+        "ms-python.isort",
+        "njpwerner.autodocstring",
+        "hbenl.vscode-test-explorer",
+        "ms-vscode.test-adapter-converter"
+    ]
+}
