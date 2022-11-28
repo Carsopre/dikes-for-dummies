@@ -1,0 +1,1170 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Chapter 03. Objected Oriented Programming in Python - Dikes for dummies documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../github/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-03-objected-oriented-programming-in-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-header__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dikes for dummies documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 03. Objected Oriented Programming in Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Dikes For Dummies
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../changelog.html" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../study_case.html" class="md-tabs__link">
+      Study Case
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01_project_setup.html" class="md-tabs__link md-tabs__link--active">
+        Chapters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/dike.html" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-nav__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    Dikes for dummies documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Dikes For Dummies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_case.html" class="md-nav__link">
+        Study Case
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_project_setup.html" class="md-nav__link">
+        Chapter 01. Project setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_never_trust_the_user.html" class="md-nav__link">
+        Chapter 02. Never trust the user.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 03. Objected Oriented Programming in Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="03_object_oriented_programming.html" class="md-nav__link md-nav__link--active">
+        Chapter 03. Objected Oriented Programming in Python
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundations" class="md-nav__link">
+    Foundations
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation" class="md-nav__link">
+    Encapsulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstractions" class="md-nav__link">
+    Abstractions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solid" class="md-nav__link">
+    SOLID
+  </a>
+  
+    <nav class="md-nav" aria-label="SOLID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle" class="md-nav__link">
+    Single responsibility principle.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-for-extension-closed-for-modification" class="md-nav__link">
+    Open for extension, closed for modification.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liskov-substitution" class="md-nav__link">
+    Liskov substitution.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-segregation-principle" class="md-nav__link">
+    Interface segregation principle.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-inversion-principle" class="md-nav__link">
+    Dependency inversion principle.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_the_pythonic_way.html" class="md-nav__link">
+        Chapter 04. The pythonic way.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_testing_101.html" class="md-nav__link">
+        Chapter 05. Testing 101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_creating_interfaces.html" class="md-nav__link">
+        Chapter 06. Creating interfaces.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_creating_documentation.html" class="md-nav__link">
+        Chapter 07. Creating documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08_building_the_tool.html" class="md-nav__link">
+        Chapter 08. Building the tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dike.html" class="md-nav__link">
+        Dike
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#foundations" class="md-nav__link">
+    Foundations
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation" class="md-nav__link">
+    Encapsulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstractions" class="md-nav__link">
+    Abstractions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solid" class="md-nav__link">
+    SOLID
+  </a>
+  
+    <nav class="md-nav" aria-label="SOLID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle" class="md-nav__link">
+    Single responsibility principle.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-for-extension-closed-for-modification" class="md-nav__link">
+    Open for extension, closed for modification.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liskov-substitution" class="md-nav__link">
+    Liskov substitution.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-segregation-principle" class="md-nav__link">
+    Interface segregation principle.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-inversion-principle" class="md-nav__link">
+    Dependency inversion principle.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/Carsopre/dikes-for-dummies/edit/master/docs/chapters/03_object_oriented_programming.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="chapter-03-objected-oriented-programming-in-python">Chapter 03. Objected Oriented Programming in Python<a class="headerlink" href="#chapter-03-objected-oriented-programming-in-python" title="Permanent link">&para;</a></h1>
+<p>We have already seen the perks and pitfalls of Python as a dynamic language and its <code>duck typing</code>. Now we will explore both object oriented <em>foundations</em> and <em>solid</em> concepts applied through Python programming.</p>
+<h2 id="foundations">Foundations<a class="headerlink" href="#foundations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#encapsulation">Encapsulation</a>.<ul>
+<li>Define public, protected and private data.</li>
+<li>Public data can be accessed ‘from the outside’.</li>
+<li>Protected data only internally (when using inheritance).</li>
+<li>Private data only in the declared class.</li>
+</ul>
+</li>
+<li><a href="#inheritance">Inheritance</a> and <a href="#abstractions">abstractions</a>:<ul>
+<li>Definition of generic functionality and properties in the base class.</li>
+<li>Concrete methods in the inherited classes.</li>
+<li>Abstract classes need a concrete inherited class (specialisation).</li>
+<li>A class can inherit from an abstract class or another concrete class.</li>
+</ul>
+</li>
+<li><a href="#polymorphism">Polymorphism</a>.<ul>
+<li>The same interface applies for different data types or classes</li>
+<li>Can be applied to classes (through inheritance) and methods.</li>
+</ul>
+</li>
+<li>Aggregation and composition.<ul>
+<li><strong>Aggregation</strong>: the associated objects do not need each other ‘to exist’.</li>
+<li><strong>Composition</strong>: the associated objects ‘need’ each other to ‘coexist’. The main object owns</li>
+</ul>
+</li>
+</ul>
+<h3 id="encapsulation">Encapsulation<a class="headerlink" href="#encapsulation" title="Permanent link">&para;</a></h3>
+<p>In python encapsulation does not really exist, think of it more like a 'rule of conduct'. We identify protected (internal) methods and  parameters with a simple underscore <code>_</code> and private with double <code>__</code> so:
+- <code>def _get_my_variable(...) -&gt; Any</code> is meant to be used only while developing in the tool. Preferrebly within an instanced object.
+- <code>def __get_my_variable(...) -&gt; Any</code> is only meant to be used within its class / module. And not to be exposed.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">BasicEncapsulation</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">public_property</span> <span class="o">=</span> <span class="mi">42</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_protected_property</span> <span class="o">=</span> <span class="mf">4.2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__private_property</span> <span class="o">=</span> <span class="mf">0.42</span>
+
+    <span class="k">def</span> <span class="nf">public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_protected_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div>
+<h3 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h3>
+<p>We have already shown simple inheritance, but of course Python allows us to do multiple inheritance whenever needed.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DikeProfile</span><span class="p">:</span>
+
+    <span class="n">characteristic_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">characteristic_points</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">class</span> <span class="nc">DikeReinforcement</span><span class="p">:</span>
+    <span class="n">reinforcement_input</span><span class="p">:</span> <span class="n">DikeReinforcementInput</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reinforcement_input</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">DikeReinforcementProfile</span><span class="p">(</span><span class="n">DikeProfile</span><span class="p">,</span> <span class="n">DikeReinforcement</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Reinforced Profile&quot;</span>
+
+
+<span class="n">_drp</span> <span class="o">=</span> <span class="n">DikeReinforcementProfile</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_drp</span><span class="p">,</span> <span class="n">DikeReinforcement</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_drp</span><span class="p">,</span> <span class="n">DikeProfile</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_drp</span><span class="p">,</span> <span class="n">DikeReinforcement</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="abstractions">Abstractions<a class="headerlink" href="#abstractions" title="Permanent link">&para;</a></h3>
+<p>To create abstract methods or classes we use the library <code>ABC</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">DikeProfileBase</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="n">characteristic_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">characteristic_points</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Implement in concrete class&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_points_from_tuples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tuple_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tuple_list</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;tuple_list argument required.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">characteristic_points</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="n">tuple_list</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">DikeProfile</span><span class="p">(</span><span class="n">DikeProfileBase</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Initial Dike Profile&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_tuple_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tuple_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">DikeProfile</span><span class="p">:</span>
+        <span class="n">_dike</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">_dike</span><span class="o">.</span><span class="n">set_points_from_tuples</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_dike</span>
+
+<span class="k">assert</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">DikeProfile</span><span class="p">,</span> <span class="n">DikeProfileBase</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="polymorphism">Polymorphism<a class="headerlink" href="#polymorphism" title="Permanent link">&para;</a></h3>
+<p>Although it's possible to apply polymorphism in Python. In my experience is seldom used. Concrete methods and well-applied <a href="#single-responsibility-principle">SRP</a> provide better code.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DikeProfileCalculator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">calculate_characteristic_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Base dike profile operations.</span>
+        <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">PipingDikeProfileCalculator</span><span class="p">(</span><span class="n">DikeProfileCalculator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">calculate_characteristic_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Reinforcement piping dike operations.</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">calculate_characteristic_point</span>
+</code></pre></div>
+<h2 id="solid">SOLID<a class="headerlink" href="#solid" title="Permanent link">&para;</a></h2>
+<h3 id="single-responsibility-principle">Single responsibility principle.<a class="headerlink" href="#single-responsibility-principle" title="Permanent link">&para;</a></h3>
+<p>By creating 'builders' and leaving the classes only as datastructures we reduce the amount of responsibility a class needs to do.</p>
+<h3 id="open-for-extension-closed-for-modification">Open for extension, closed for modification.<a class="headerlink" href="#open-for-extension-closed-for-modification" title="Permanent link">&para;</a></h3>
+<p>A class should be extendable without modifying the class itself. Whenever you start having an <code>if-else</code> to differenciate behaviors, try to create a new concrete class.</p>
+<ul>
+<li>
+<p>Given:
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DikeMaterial</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">material_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material_type</span> <span class="o">=</span> <span class="n">material_type</span>
+
+    <span class="k">def</span> <span class="nf">get_material_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">material_type</span> <span class="o">==</span> <span class="s2">&quot;sand&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">*</span> <span class="mf">1.5</span>
+
+<span class="k">def</span> <span class="nf">get_total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">material_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DikeMaterial</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">_material</span><span class="o">.</span><span class="n">get_material_cost</span><span class="p">()</span> <span class="k">for</span> <span class="n">_material</span> <span class="ow">in</span> <span class="n">material_list</span><span class="p">)</span>
+
+<span class="n">_material_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">DikeMaterial</span><span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="s2">&quot;sand&quot;</span><span class="p">),</span> <span class="n">DikeMaterial</span><span class="p">(</span><span class="mf">4.2</span><span class="p">,</span> <span class="s2">&quot;clay&quot;</span><span class="p">)]</span>
+<span class="n">get_total_cost</span><span class="p">(</span><span class="n">_material_list</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>We can do instead: 
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DikeMaterial</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">price</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="k">def</span> <span class="nf">get_material_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span>
+
+<span class="k">class</span> <span class="nc">ClayMaterial</span><span class="p">(</span><span class="n">DikeMaterial</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_material_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mf">1.5</span>
+
+<span class="n">_material_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">Bridge</span><span class="p">(</span><span class="mf">2.4</span><span class="p">),</span> <span class="n">ClayMaterial</span><span class="p">(</span><span class="mf">4.2</span><span class="p">)]</span>
+<span class="n">_costs</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">_m</span><span class="o">.</span><span class="n">get_material_cost</span><span class="p">()</span> <span class="k">for</span> <span class="n">_m</span> <span class="ow">in</span> <span class="n">material_list</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>In addition, initaiting classes through <em>classmethods</em>, or external constructors / factories might allow you to easily create one or the other. Delegating even more responsibilities and being more aligned with the <em>Open-closed</em> principle. Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Protocol</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="k">class</span> <span class="nc">MaterialProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="k">def</span> <span class="nf">get_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">SandMaterial</span><span class="p">(</span><span class="n">MaterialProtocol</span><span class="p">):</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">get_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mf">1.14</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">initiate_with_price</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">price</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bridge</span><span class="p">:</span>
+        <span class="c1"># Through class methods.</span>
+        <span class="n">_material</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">_material</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+        <span class="k">return</span> <span class="n">_material</span>
+
+<span class="k">def</span> <span class="nf">build_material</span><span class="p">(</span><span class="n">material_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">MaterialProtocol</span><span class="p">],</span> <span class="n">price</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MaterialProtocol</span><span class="p">:</span>
+    <span class="c1"># Through a &#39;builder&#39;</span>
+    <span class="n">_material</span> <span class="o">=</span> <span class="n">bridge_type</span><span class="p">()</span>
+    <span class="n">_material</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+    <span class="k">return</span> <span class="n">_material</span>
+</code></pre></div>
+<h3 id="liskov-substitution">Liskov substitution.<a class="headerlink" href="#liskov-substitution" title="Permanent link">&para;</a></h3>
+<p>A subclass must be substitutable by its super class. In my opinion, this principle is not really applyable in Python. Examples below:
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SuperSand</span><span class="p">(</span><span class="n">SandMaterial</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="c1"># Super taxed!</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mi">2</span>
+
+
+<span class="n">_material</span> <span class="o">=</span> <span class="n">SuperSand</span><span class="o">.</span><span class="n">initiate_with_price</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 1. First we prove the bridge is the same type as the base.</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_material</span><span class="p">,</span> <span class="n">SandMaterial</span><span class="p">),</span> <span class="s2">&quot;Failed principle!&quot;</span>
+
+<span class="c1"># 2. Then we prove the cost will be the same regardless of how it is typed (parent or subclass)</span>
+<span class="k">def</span> <span class="nf">get_as_sand_material</span><span class="p">(</span><span class="n">s_material</span><span class="p">:</span> <span class="n">SandMaterial</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">s_material</span><span class="o">.</span><span class="n">get_cost</span><span class="p">()</span>
+
+<span class="c1"># To make it work, we should invoke &#39;super&#39;:</span>
+<span class="n">_m_cost</span> <span class="o">=</span> <span class="n">_material</span><span class="o">.</span><span class="n">get_cost</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">get_as_sand_material</span><span class="p">(</span><span class="nb">super</span><span class="p">(</span><span class="n">SuperSand</span><span class="p">,</span> <span class="n">_material</span><span class="p">))</span> <span class="o">!=</span> <span class="n">_m_cost</span><span class="p">,</span> <span class="s2">&quot;Failed principle!&quot;</span>
+<span class="k">assert</span> <span class="n">get_as_sand_material</span><span class="p">(</span><span class="n">_material</span><span class="p">)</span> <span class="o">!=</span> <span class="n">_m_cost</span><span class="p">,</span> <span class="s2">&quot;Failed principle!&quot;</span>
+</code></pre></div></p>
+<h3 id="interface-segregation-principle">Interface segregation principle.<a class="headerlink" href="#interface-segregation-principle" title="Permanent link">&para;</a></h3>
+<p>Intefaces in Python are relatively "new", you can implement interfaces through <code>typing.Protocol</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">runtime_checkable</span>
+
+<span class="nd">@runtime_checkable</span>
+<span class="k">class</span> <span class="nc">DikeProfileProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="n">characteristic_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="k">class</span> <span class="nc">DikeProfile</span><span class="p">(</span><span class="n">DikeProfileProtocol</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="n">_dike</span> <span class="o">=</span> <span class="n">DikeProfile</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_dike</span><span class="p">,</span> <span class="n">DikeProfileProtocol</span><span class="p">)</span>
+<span class="c1"># A protocol can&#39;t be instantiated, try this:</span>
+<span class="n">DikeProfileProtocol</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Notice that the properties can be defined as inlines in the protocol. As long as they are declared later on (either with decorators or as inlines) the contract will be fulfilled.</p>
+<p>Pay attention as well to <code>@runtime_checkable</code>, it will allow us to verify whether an instance implements said protocol.</p>
+</blockquote>
+<h3 id="dependency-inversion-principle">Dependency inversion principle.<a class="headerlink" href="#dependency-inversion-principle" title="Permanent link">&para;</a></h3>
+<p>Depend on abstractions, not concretions.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LineString</span>
+<span class="kn">from</span> <span class="nn">dikesfordummies.dike.dike_profile</span> <span class="kn">import</span> <span class="n">DikeProfile</span>
+
+<span class="k">def</span> <span class="nf">_plot_line</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ob</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ob</span><span class="p">,</span> <span class="s2">&quot;geoms&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ob</span> <span class="ow">or</span> <span class="p">[</span><span class="n">ob</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">xy</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">solid_capstyle</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot_profile</span><span class="p">(</span><span class="n">dike_profile</span><span class="p">:</span> <span class="n">ReinforcementDikeProfile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyplot</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">_subplot</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+    <span class="n">_plot_line</span><span class="p">(</span>
+        <span class="n">_subplot</span><span class="p">,</span> <span class="n">LineString</span><span class="p">(</span><span class="n">dike_profile</span><span class="o">.</span><span class="n">characteristic_points</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#03a9fc&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</code></pre></div>
+<p>In theory, the above code should only work for a ReinforcementDikeProfile, well, it's python so it will swallow also a regular profile. But we should aim to make the methods / classes depending on higher level of abstractions, so we could replace it with either the base class, or a protocol.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">plot_profile</span><span class="p">(</span><span class="n">dike_profile</span><span class="p">:</span> <span class="n">DikeProfile</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">plot_profile</span><span class="p">(</span><span class="n">dike_profile</span><span class="p">:</span> <span class="n">DikeProfileProtocol</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="02_never_trust_the_user.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 02. Never trust the user." rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chapter 02. Never trust the user.
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="04_the_pythonic_way.html" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 04. The pythonic way." rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Chapter 04. The pythonic way.
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Carsopre
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/Carsopre/dikes-for-dummies" target="_blank" rel="noopener" title="Source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

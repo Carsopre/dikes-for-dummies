@@ -1,0 +1,1241 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Chapter 06. Creating interfaces. - Dikes for dummies documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../github/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-06-creating-interfaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-header__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dikes for dummies documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 06. Creating interfaces.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Dikes For Dummies
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../changelog.html" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../study_case.html" class="md-tabs__link">
+      Study Case
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01_project_setup.html" class="md-tabs__link md-tabs__link--active">
+        Chapters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/dike.html" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-nav__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    Dikes for dummies documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Dikes For Dummies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_case.html" class="md-nav__link">
+        Study Case
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_project_setup.html" class="md-nav__link">
+        Chapter 01. Project setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_never_trust_the_user.html" class="md-nav__link">
+        Chapter 02. Never trust the user.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_object_oriented_programming.html" class="md-nav__link">
+        Chapter 03. Objected Oriented Programming in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_the_pythonic_way.html" class="md-nav__link">
+        Chapter 04. The pythonic way.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_testing_101.html" class="md-nav__link">
+        Chapter 05. Testing 101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 06. Creating interfaces.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="06_creating_interfaces.html" class="md-nav__link md-nav__link--active">
+        Chapter 06. Creating interfaces.
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#know-your-audience" class="md-nav__link">
+    Know your audience.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-workflows" class="md-nav__link">
+    Application workflows.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-with-click" class="md-nav__link">
+    CLI with Click
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI with Click">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-endpoint" class="md-nav__link">
+    Creating an endpoint.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-entry-points" class="md-nav__link">
+    Creating multiple entry points.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-from-cli" class="md-nav__link">
+    Debugging from CLI.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-our-cli" class="md-nav__link">
+    Testing our CLI.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-with-qt" class="md-nav__link">
+    GUI with QT
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI with QT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-basic-gui" class="md-nav__link">
+    Creating a basic GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-from-cli_1" class="md-nav__link">
+    Debugging from CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-workflows" class="md-nav__link">
+    Adding workflows.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_creating_documentation.html" class="md-nav__link">
+        Chapter 07. Creating documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08_building_the_tool.html" class="md-nav__link">
+        Chapter 08. Building the tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dike.html" class="md-nav__link">
+        Dike
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#know-your-audience" class="md-nav__link">
+    Know your audience.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-workflows" class="md-nav__link">
+    Application workflows.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-with-click" class="md-nav__link">
+    CLI with Click
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI with Click">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-endpoint" class="md-nav__link">
+    Creating an endpoint.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-entry-points" class="md-nav__link">
+    Creating multiple entry points.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-from-cli" class="md-nav__link">
+    Debugging from CLI.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-our-cli" class="md-nav__link">
+    Testing our CLI.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-with-qt" class="md-nav__link">
+    GUI with QT
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI with QT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-basic-gui" class="md-nav__link">
+    Creating a basic GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-from-cli_1" class="md-nav__link">
+    Debugging from CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-workflows" class="md-nav__link">
+    Adding workflows.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/Carsopre/dikes-for-dummies/edit/master/docs/chapters/06_creating_interfaces.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="chapter-06-creating-interfaces">Chapter 06. Creating interfaces.<a class="headerlink" href="#chapter-06-creating-interfaces" title="Permanent link">&para;</a></h1>
+<p>It is time to work on an interface that provides an end user access to our tool when using it from command line, or later as an .exe.</p>
+<p>We will just focus on two options.</p>
+<ul>
+<li>CLI - like, using the <a href="https://click.palletsprojects.com/en/8.1.x/">click</a> library.</li>
+<li>GUI - like, using the <a href="https://www.qt.io/qt-for-python">QT</a> library.</li>
+</ul>
+<p>Other option would be to make an API, but we will not cover it here.</p>
+<h2 id="know-your-audience">Know your audience.<a class="headerlink" href="#know-your-audience" title="Permanent link">&para;</a></h2>
+<p>We have talked about this before, let's check again the potential uses of this package and its requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Usage / Requirements</th>
+<th align="center">Endpoints</th>
+<th align="center">Built</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sandbox</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>Library</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>CLI</td>
+<td align="center">x</td>
+<td align="center">(Not necessarily)</td>
+</tr>
+<tr>
+<td>API</td>
+<td align="center">x</td>
+<td align="center">(Running as a service)</td>
+</tr>
+<tr>
+<td>GUI</td>
+<td align="center">x</td>
+<td align="center">x</td>
+</tr>
+</tbody>
+</table>
+<p>As we can see, endpoints are required for anything where the user is not 'coding'. Therefore it is a good idea to create our own internal application interface so that the endpoints can easilly call the required workflows.</p>
+<p>It is recommended to leave your <code>core</code> functionality as a separate library. This will allow you to develop separate interfaces that <strong>uses / imports</strong> your package. Allowing for better separation of concerns.</p>
+<p>Of course if you just want to build a GUI or an API from the very beginning you could just go ahead and split everything in the project tree.</p>
+<h2 id="application-workflows">Application workflows.<a class="headerlink" href="#application-workflows" title="Permanent link">&para;</a></h2>
+<p>As mentioned, when not working in a 'sandbox' we need to provide certain workflows (or user cases) that provide an endpoint to the user. This endpoint can be later used by an CLI, API or GUI.</p>
+<p>We will just define in a file a workflow that given some (optional) input will display or save a profile geometry. This workflow will work as an example for building a CLI or a GUI in the following steps.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">dikesfordummies</span> <span class="kn">import</span> <span class="n">dike_plot</span>
+<span class="kn">from</span> <span class="nn">dikesfordummies.dike.dike_input</span> <span class="kn">import</span> <span class="n">DikeInput</span>
+<span class="kn">from</span> <span class="nn">dikesfordummies.dike.dike_profile_builder</span> <span class="kn">import</span> <span class="n">DikeProfileBuilder</span>
+
+<span class="k">def</span> <span class="nf">plot_dike_profile</span><span class="p">(</span><span class="n">dike_input</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates a `DikeProfile` plot with the reference data given in `dike_input`. The plot is either shown or saved depending on whether the argument `outfile` is given or not.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dike_input (List[float]): List of values representing a Dike&#39;s profile data.</span>
+<span class="sd">        outfile (Optional[Path]): File path where to save the plot.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_dike_input</span> <span class="o">=</span> <span class="n">DikeInput</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="n">dike_input</span><span class="p">)</span>
+    <span class="n">_dike</span> <span class="o">=</span> <span class="n">DikeProfileBuilder</span><span class="o">.</span><span class="n">from_input</span><span class="p">(</span><span class="n">_dike_input</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+    <span class="n">_plot</span> <span class="o">=</span> <span class="n">dike_plot</span><span class="o">.</span><span class="n">plot_profile</span><span class="p">(</span><span class="n">_dike</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">_plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">outfile</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">outfile</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outfile</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">outfile</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_plot</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="cli-with-click">CLI with Click<a class="headerlink" href="#cli-with-click" title="Permanent link">&para;</a></h2>
+<p>To simplify our project structure, we will just create a <code>main.py</code> in the <em>dikesfordummies</em> directory.</p>
+<h3 id="creating-an-endpoint">Creating an endpoint.<a class="headerlink" href="#creating-an-endpoint" title="Permanent link">&para;</a></h3>
+<p>Click provides us with a simple way of processing the information coming from command line and connecting it to our library. </p>
+<div class="highlight"><pre><span></span><code><span class="go">poetry add click</span>
+</code></pre></div>
+<p>First, we need to make our file recognisible and 'executable':
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div></p>
+<p>Now the command line should be able to pass their arguments. In <code>Click</code> we do this with <code>@click.command</code> and <code>@click.option</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dikesfordummies</span> <span class="kn">import</span> <span class="n">workflows</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--dike_input&quot;</span><span class="p">,</span>
+    <span class="n">nargs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="n">_default_input</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;List of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">_default_input</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2"> values for the dike input. Values represent </span><span class="si">{</span><span class="n">_dike_keys</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--outfile&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">path_type</span><span class="o">=</span><span class="n">Path</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The (optional) path where to save the profile plot.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_profile</span><span class="p">(</span><span class="n">dike_input</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Path</span><span class="p">]):</span>
+    <span class="n">workflows</span><span class="o">.</span><span class="n">plot_dike_profile</span><span class="p">(</span><span class="n">dike_input</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">plot_profile</span><span class="p">()</span>
+</code></pre></div>
+<p>Fortunately for us, <code>Click</code> already does the type checking for us. So we can assume that when an outfile parameter is given, then it will be of type <code>pathlib.Path</code> as specified in the argument <code>path_type</code>.</p>
+<p>We can try to run this now:
+<div class="highlight"><pre><span></span><code><span class="go">python dikesfordummies\main.py plot_profile --help</span>
+</code></pre></div></p>
+<h3 id="creating-multiple-entry-points">Creating multiple entry points.<a class="headerlink" href="#creating-multiple-entry-points" title="Permanent link">&para;</a></h3>
+<p>You may be already wondering how to append more commands so that not just this method can be used. Well, that's easily solved by adding a <code>@click.group</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;plot_profile&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_profile</span><span class="p">(</span><span class="n">dike_input</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">outfile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Path</span><span class="p">]):</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">cli</span><span class="p">()</span>
+</code></pre></div>
+<p>And if we try again the help command the same result should show.</p>
+<p>We can try to run this now:
+<div class="highlight"><pre><span></span><code><span class="go">python dikesfordummies\main.py plot_profile --help</span>
+</code></pre></div></p>
+<h3 id="debugging-from-cli">Debugging from CLI.<a class="headerlink" href="#debugging-from-cli" title="Permanent link">&para;</a></h3>
+<p>It is relatively easy to extend the current settings to include a 'one-off' CLI call in our <code>launch.json</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLI plot default dike&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}\\dikesfordummies\\main.py&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="s2">&quot;plot_profile&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="s2">&quot;--outfile&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="s2">&quot;dike_plot.png&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="testing-our-cli">Testing our CLI.<a class="headerlink" href="#testing-our-cli" title="Permanent link">&para;</a></h3>
+<p>Let's not forget about tests for our endpoints:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_given_valid_input_generates_default_profile</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">pytest</span><span class="o">.</span><span class="n">FixtureRequest</span><span class="p">):</span>
+    <span class="c1"># 1. Define test data.</span>
+    <span class="n">_test_dir</span> <span class="o">=</span> <span class="n">test_results</span> <span class="o">/</span> <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">_test_file</span> <span class="o">=</span> <span class="n">_test_dir</span> <span class="o">/</span> <span class="s2">&quot;profile.png&quot;</span>
+
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_test_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;--outfile&quot;</span><span class="p">,</span> <span class="n">_test_file</span><span class="p">]</span>
+
+    <span class="c1"># 2. Run test.</span>
+    <span class="n">_run_result</span> <span class="o">=</span> <span class="n">CliRunner</span><span class="p">()</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">plot_profile</span><span class="p">,</span> <span class="n">_args</span><span class="p">)</span>
+
+    <span class="c1"># 3. Verify expectations.</span>
+    <span class="k">assert</span> <span class="n">_run_result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="n">_test_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="gui-with-qt">GUI with QT<a class="headerlink" href="#gui-with-qt" title="Permanent link">&para;</a></h2>
+<p>Building a GUI in QT has its limitations if we compare to other great frameworks such as WPF. However, this should not prevent us from achieving our goals.</p>
+<p>To simplify this project we will just create the logic in a directory <strong>within</strong> <em>dikesfordummies</em>. In a production project you should try to have at least a separation of concerns such as:</p>
+<p>Because we are just <em>playing around</em> we will just create a new level in the project tree such as:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">\dikesfordummies</span><span class="w"></span>
+<span class="w">        </span><span class="err">\core</span><span class="w"></span>
+<span class="w">            </span><span class="err">\dike</span><span class="w"></span>
+<span class="w">                </span><span class="err">...</span><span class="w"></span>
+<span class="w">            </span><span class="err">...</span><span class="w"></span>
+<span class="w">            </span><span class="err">main.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">\gui</span><span class="w"></span>
+<span class="w">            </span><span class="err">...</span><span class="w"></span>
+<span class="w">            </span><span class="err">main.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">    </span><span class="err">\tests</span><span class="w"></span>
+<span class="w">        </span><span class="err">\core</span><span class="w"></span>
+<span class="w">            </span><span class="err">...</span><span class="w"></span>
+<span class="w">            </span><span class="err">main.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">\gui</span><span class="w"></span>
+<span class="w">            </span><span class="err">...</span><span class="w"></span>
+<span class="w">            </span><span class="err">main.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">__init__.py</span><span class="w"></span>
+</code></pre></div>
+<h3 id="creating-a-basic-gui">Creating a basic GUI<a class="headerlink" href="#creating-a-basic-gui" title="Permanent link">&para;</a></h3>
+<p>With QT, all classical components are available. We will an interface that represents the previous endpoint.</p>
+<div class="highlight"><pre><span></span><code><span class="go">poetry add pyqt5</span>
+</code></pre></div>
+<p>We will create a new <code>main.py</code> which will contain GUI logic.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">screen</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="debugging-from-cli_1">Debugging from CLI<a class="headerlink" href="#debugging-from-cli_1" title="Permanent link">&para;</a></h3>
+<p>We can also add a debug setting:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Run GUI Main window&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}\\dikesfordummies\\gui\\main.py&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="err">)</span><span class="w"></span>
+</code></pre></div>
+<h3 id="adding-workflows">Adding workflows.<a class="headerlink" href="#adding-workflows" title="Permanent link">&para;</a></h3>
+<p>Let's make it simple, we want to plot, or save the default geometry.
+We can demonstrate that with two simple buttons:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Dikes For Dummies&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_menu_options</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_set_menu_options</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_menu_button</span><span class="p">(</span>
+            <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;Output directory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Select output directory for plot(s).&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_get_output_file</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_menu_button</span><span class="p">(</span>
+            <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;Plot&quot;</span><span class="p">,</span> <span class="s2">&quot;Plot default profile&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_profile</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_output_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_output_dir</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getExistingDirectory</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Select output plot directory.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">_output_dir</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">_output_dir</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_create_menu_button</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ay_pos</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">tooltip</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">event</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+        <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">utils</span><span class="o">.</span><span class="n">create_menu_button</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ay</span><span class="o">=</span><span class="n">ay_pos</span><span class="p">,</span> <span class="n">aw</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">az</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span> <span class="n">title</span><span class="p">,</span> <span class="n">tooltip</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">enabled</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_plot_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># call DFS</span>
+        <span class="n">_outfile</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_dir</span><span class="p">:</span>
+            <span class="n">_outfile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_dir</span> <span class="o">/</span> <span class="s2">&quot;default_plot.png&quot;</span>
+        <span class="n">workflows</span><span class="o">.</span><span class="n">plot_dike_profile</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">workflows</span><span class="o">.</span><span class="n">_default_input</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">_outfile</span><span class="p">)</span>
+</code></pre></div>
+<p>With this, we are good to go. We have now a very simple GUI that connects to the rest of the library.</p>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<p>Depending on your approach about testing gui's you may not need to do too much work. For our case, we can just simply test the initialization and plotting of a profile:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_gui</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">pytest</span><span class="o">.</span><span class="n">FixtureRequest</span><span class="p">):</span>
+    <span class="c1"># 1. Define test data.</span>
+    <span class="n">_mw</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">_test_dir</span> <span class="o">=</span> <span class="n">test_results</span> <span class="o">/</span> <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_test_dir</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># 2. Run test.</span>
+    <span class="n">_mw</span><span class="o">.</span><span class="n">_output_dir</span> <span class="o">=</span> <span class="n">_test_dir</span>
+    <span class="n">_mw</span><span class="o">.</span><span class="n">_plot_profile</span><span class="p">()</span>
+
+    <span class="c1"># 3. Verify expectations</span>
+    <span class="k">assert</span> <span class="n">_test_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="n">_test_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.png&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>That's it for this chapter. We have seen what the principles are towards creating interfaces in a python project. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="05_testing_101.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 05. Testing 101" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chapter 05. Testing 101
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="07_creating_documentation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 07. Creating documentation" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Chapter 07. Creating documentation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Carsopre
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/Carsopre/dikes-for-dummies" target="_blank" rel="noopener" title="Source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

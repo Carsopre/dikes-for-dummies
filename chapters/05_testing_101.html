@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Chapter 05. Testing 101 - Dikes for dummies documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../github/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-05-testing-101" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-header__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dikes for dummies documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 05. Testing 101
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="dummies" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Dikes For Dummies
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../changelog.html" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../study_case.html" class="md-tabs__link">
+      Study Case
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01_project_setup.html" class="md-tabs__link md-tabs__link--active">
+        Chapters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/dike.html" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Dikes for dummies documentation" class="md-nav__button md-logo" aria-label="Dikes for dummies documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M80.8 136.5C104.9 93.8 152.6 64 209 64c16.9 0 33.1 2.7 48.2 7.7 16.8 5.5 34.9-3.6 40.4-20.4s-3.6-34.9-20.4-40.4C255.8 3.8 232.8 0 209 0 95.2 0 0 88 0 200c0 91.6 53.5 172.1 142.2 194.1 13.4 3.8 27.5 5.9 42.2 5.9.7 0 1.4 0 2.1-.1 1.8 0 3.7.1 5.5.1 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.5-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.4 15.5-49.9 26.1-77.4 26.1h-.1c-12.4 0-24-1.5-34.9-4.3C121.6 320.2 96 287 96 248c0-48.5 39.5-88 88.4-88 13.5 0 26.1 3 37.5 8.3 16 7.5 35.1.6 42.5-15.5s.6-35.1-15.5-42.5c-19.6-9.2-41.5-14.3-64.5-14.3-40 0-76.4 15.4-103.6 40.5zm252-18.1c-8.1 6-12.8 15.5-12.8 25.6v121c1.6 1 3.3 2 4.8 3.1 18.4 12.7 39.6 20.3 59.2 20.3 19 0 41.2-7.9 59.2-20.3 23.8-16.7 55.8-15.3 78.1 3.4 10.6 8.8 24.2 15.6 37.3 18.6 5.8 1.4 11.2 3.4 16.2 6.2.7-2.7 1.1-5.5 1.1-8.4l-.4-144c0-10-4.7-19.4-12.7-25.5l-95.5-72a31.95 31.95 0 0 0-38.5 0l-96 72zM384 448c-27.5 0-55-10.6-77.5-26.1-11.1-7.9-25.9-7.9-37 0-22.5 15.5-50 26.1-77.5 26.1-26.9 0-55.3-10.8-77.4-26.1-11.9-8.5-28.1-7.8-39.2 1.7-14.4 11.9-32.5 21-50.6 25.2-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25 29 15.6 61.5 25.9 94.5 25.9 31.9 0 60.6-9.9 80.4-18.9 5.8-2.7 11.1-5.3 15.6-7.7 4.5 2.4 9.7 5.1 15.6 7.7 19.8 9 48.6 18.9 80.4 18.9 33 0 65.5-10.3 94.5-25.8 13.4 8.4 33.7 19.3 58.2 25 17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2-11.1-9.4-27.3-10.1-39.2-1.7-22 15.2-50.5 26-77.4 26z"/></svg>
+
+    </a>
+    Dikes for dummies documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Carsopre/dikes-for-dummies" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    carsopre/dikes-for-dummies
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Dikes For Dummies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_case.html" class="md-nav__link">
+        Study Case
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_project_setup.html" class="md-nav__link">
+        Chapter 01. Project setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_never_trust_the_user.html" class="md-nav__link">
+        Chapter 02. Never trust the user.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_object_oriented_programming.html" class="md-nav__link">
+        Chapter 03. Objected Oriented Programming in Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_the_pythonic_way.html" class="md-nav__link">
+        Chapter 04. The pythonic way.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 05. Testing 101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05_testing_101.html" class="md-nav__link md-nav__link--active">
+        Chapter 05. Testing 101
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-conditions" class="md-nav__link">
+    Pre-conditions.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-test-structure" class="md-nav__link">
+    Building the test structure.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-test" class="md-nav__link">
+    Creating a test
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifying-risen-errors" class="md-nav__link">
+    Verifying risen errors:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-multiple-cases" class="md-nav__link">
+    Adding multiple cases.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-fixtures" class="md-nav__link">
+    Using fixtures.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflows-on-github" class="md-nav__link">
+    Workflows on GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_creating_interfaces.html" class="md-nav__link">
+        Chapter 06. Creating interfaces.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_creating_documentation.html" class="md-nav__link">
+        Chapter 07. Creating documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08_building_the_tool.html" class="md-nav__link">
+        Chapter 08. Building the tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dike.html" class="md-nav__link">
+        Dike
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-conditions" class="md-nav__link">
+    Pre-conditions.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-test-structure" class="md-nav__link">
+    Building the test structure.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-test" class="md-nav__link">
+    Creating a test
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifying-risen-errors" class="md-nav__link">
+    Verifying risen errors:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-multiple-cases" class="md-nav__link">
+    Adding multiple cases.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-fixtures" class="md-nav__link">
+    Using fixtures.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflows-on-github" class="md-nav__link">
+    Workflows on GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/Carsopre/dikes-for-dummies/edit/master/docs/chapters/05_testing_101.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="chapter-05-testing-101">Chapter 05. Testing 101<a class="headerlink" href="#chapter-05-testing-101" title="Permanent link">&para;</a></h1>
+<p>We are now going to start writing tests to either verify our current implementations but also to start doing some Test Driven Development.</p>
+<p>If you installed the package (<code>poetry install</code>) you should have already <a href="https://docs.pytest.org/en/7.1.x/">pytest</a>, otherwise add it to your .toml like follows:
+<div class="highlight"><pre><span></span><code><span class="go">poetry add pytest --dev</span>
+</code></pre></div></p>
+<h2 id="pre-conditions">Pre-conditions.<a class="headerlink" href="#pre-conditions" title="Permanent link">&para;</a></h2>
+<p>Pytest will automatically detect your tests under the following conditions:</p>
+<ul>
+<li>they are in the tests directory.</li>
+<li>test files start with test_ prefix.</li>
+<li>test methods start with prefix test_</li>
+</ul>
+<h2 id="building-the-test-structure">Building the test structure.<a class="headerlink" href="#building-the-test-structure" title="Permanent link">&para;</a></h2>
+<p>Like in many other things in Python, there is not just one way to do this. However, my recommendation is to have a test directory under your root project, at the same level of your package, in our case it should look now like this:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">\dikes-for-dummies</span><span class="w"></span>
+<span class="w">        </span><span class="err">\docs</span><span class="w"></span>
+<span class="w">        </span><span class="err">\dikesfordummies</span><span class="w"></span>
+<span class="w">            </span><span class="err">\dike</span><span class="w"></span>
+<span class="w">                </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_profile.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_reinforcement_input.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_reinforcement_profile.py</span><span class="w"></span>
+<span class="w">            </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">\tests</span><span class="w"></span>
+<span class="w">            </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">environment.yml</span><span class="w"></span>
+<span class="w">        </span><span class="err">pyproject.toml</span><span class="w"></span>
+<span class="w">        </span><span class="err">README.md</span><span class="w"></span>
+<span class="w">        </span><span class="err">LICENSE</span><span class="w"></span>
+</code></pre></div>
+<p>As we build up tests in our package I like to 'mirror' the structure in the code directory, so it's easier to understand what is actually being covered. So something like:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">\dikes-for-dummies</span><span class="w"></span>
+<span class="w">        </span><span class="err">\docs</span><span class="w"></span>
+<span class="w">        </span><span class="err">\dikesfordummies</span><span class="w"></span>
+<span class="w">            </span><span class="err">\dike</span><span class="w"></span>
+<span class="w">                </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_profile.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_reinforcement_input.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">dike_reinforcement_profile.py</span><span class="w"></span>
+<span class="w">            </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">\tests</span><span class="w"></span>
+<span class="w">            </span><span class="err">\dike</span><span class="w"></span>
+<span class="w">                </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">test_dike_profile.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">test_dike_reinforcement_input.py</span><span class="w"></span>
+<span class="w">                </span><span class="err">test_dike_reinforcement_profile.py</span><span class="w"></span>
+<span class="w">            </span><span class="err">__init__.py</span><span class="w"></span>
+<span class="w">            </span><span class="err">test_acceptance.py</span><span class="w"></span>
+<span class="w">        </span><span class="err">environment.yml</span><span class="w"></span>
+<span class="w">        </span><span class="err">pyproject.toml</span><span class="w"></span>
+<span class="w">        </span><span class="err">README.md</span><span class="w"></span>
+<span class="w">        </span><span class="err">LICENSE</span><span class="w"></span>
+</code></pre></div>
+<h2 id="creating-a-test">Creating a test<a class="headerlink" href="#creating-a-test" title="Permanent link">&para;</a></h2>
+<p>We have pytest and a file already in the tests directory. But now we miss tests, let's write one to verify the DikeProfile class:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">from</span> <span class="nn">dikesfordummies.dike.dike_profile</span> <span class="kn">import</span> <span class="n">DikeProfile</span>
+
+
+<span class="k">def</span> <span class="nf">test_initiate_dikeprofile</span><span class="p">():</span>
+    <span class="n">_dike</span> <span class="o">=</span> <span class="n">DikeProfile</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_dike</span><span class="p">,</span> <span class="n">DikeProfile</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">_dike</span><span class="o">.</span><span class="n">characteristic_points</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">_dike</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">_dike</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+</code></pre></div>
+If everything is in order the test explorer should be displaying now this test to run or debug. </p>
+<p>In case it is not being display, it is a good occasion to check the python output console and check what might be causing the error. </p>
+<blockquote>
+<p>Because of Python not being compiled, discovering tests is (in occasions) the best way to ensure your solution is <em>problem free</em>.</p>
+</blockquote>
+<p>It is also possible to run the tests via command line:</p>
+<div class="highlight"><pre><span></span><code><span class="go">poetry run pytest -V</span>
+</code></pre></div>
+<p>You could also encapsulate the test in a class (my preferred choice).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">from</span> <span class="nn">dikesfordummies.dike.dike_profile</span> <span class="kn">import</span> <span class="n">DikeProfile</span>
+
+<span class="k">class</span> <span class="nc">TestDikeProfile</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">test_initiate_dikeprofile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_dike</span> <span class="o">=</span> <span class="n">DikeProfile</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_dike</span><span class="p">,</span> <span class="n">DikeProfile</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">_dike</span><span class="o">.</span><span class="n">characteristic_points</span>
+        <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">_dike</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">_dike</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="verifying-risen-errors">Verifying risen errors:<a class="headerlink" href="#verifying-risen-errors" title="Permanent link">&para;</a></h3>
+<p>Of course we can also test that an error is risen:
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_given_no_tuple_list_when_from_tuple_list_then_raises</span><span class="p">():</span>
+    <span class="n">_expected_err</span> <span class="o">=</span> <span class="s2">&quot;tuple_list argument required.&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_err</span><span class="p">:</span>
+        <span class="n">DikeProfile</span><span class="o">.</span><span class="n">from_tuple_list</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc_err</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">_expected_err</span>
+</code></pre></div></p>
+<h3 id="adding-multiple-cases">Adding multiple cases.<a class="headerlink" href="#adding-multiple-cases" title="Permanent link">&para;</a></h3>
+<p>By now, you should be wondering how to apply DRY to your tests. For instance, in the previous section, we could have also given an empty list (<code>[]</code>) because python operator <code>not</code> will also consider it as if it was <code>None</code> value. </p>
+<p>We will be using <code>pytest.mark.parametrize</code> and <code>pytest.param</code> for this:
+<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;list_value&quot;</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">pytest</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;None value&quot;</span><span class="p">),</span> <span class="n">pytest</span><span class="o">.</span><span class="n">param</span><span class="p">([],</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;Empty list&quot;</span><span class="p">)]</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_given_no_tuple_list_when_from_tuple_list_then_raises</span><span class="p">(</span><span class="n">list_value</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+    <span class="n">_expected_err</span> <span class="o">=</span> <span class="s2">&quot;tuple_list argument required.&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_err</span><span class="p">:</span>
+        <span class="n">DikeProfile</span><span class="o">.</span><span class="n">from_tuple_list</span><span class="p">(</span><span class="n">list_value</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc_err</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">_expected_err</span>
+</code></pre></div></p>
+<p>Our test suite should now detect multiple test cases for this test and allow us to run them either individually or all together.</p>
+<p>This feature allow us for many possibilities. For instance:
+<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">test_dummy_multi_parameter</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.75</span>
+</code></pre></div>
+We will have a total of 9 cases, because all possibilities will be crossed.</p>
+<blockquote>
+<p>You can verify exact float values with pytest.approx(expected_value, tolerance)</p>
+</blockquote>
+<p>Furthermore, pytest allows you to decide which tests to execute and whic note. for instance by using the custom decorator <code>@pytest.mark.acceptancetest</code> and running the specific command <code>pytest -v -m acceptancetest</code> we will only run the tests with said decorator.</p>
+<p>We can also skip tests if, for instance, we do not wish to run them under certain conditions with <code>@pytest.mark.skipif()</code>: 
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skipif</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;linux&quot;</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Only Linux supported&quot;</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_only_run_this_test_in_linux</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
+<p>Of course, we can create our own markers to stay <em>DRY</em>:
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="n">only_linux</span> <span class="o">=</span> <span class="n">pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skipif</span><span class="p">(</span>
+    <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;linux&quot;</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Only Linux supported&quot;</span>
+<span class="p">)</span>
+
+<span class="nd">@only_linux</span>
+<span class="k">def</span> <span class="nf">test_a_test_for_linux</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="nd">@only_linux</span>
+<span class="k">def</span> <span class="nf">test_another_for_linx</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
+<h3 id="using-fixtures">Using fixtures.<a class="headerlink" href="#using-fixtures" title="Permanent link">&para;</a></h3>
+<p>Pytest also allows us for tear up / tear down fixtures. These are broad, so we will just see a few common examples.
+- Providing a common object across the test suite.
+    <div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;function&quot;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">base_dikeprofile</span><span class="p">():</span>
+    <span class="n">_dike</span> <span class="o">=</span> <span class="n">DikeProfile</span><span class="p">()</span>
+    <span class="n">_dike</span><span class="o">.</span><span class="n">characteristic_points</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))))</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_dike</span><span class="o">.</span><span class="n">characteristic_points</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+    <span class="k">assert</span> <span class="n">_dike</span><span class="o">.</span><span class="n">width</span> <span class="o">==</span> <span class="n">_dike</span><span class="o">.</span><span class="n">height</span> <span class="o">==</span> <span class="mi">3</span>
+
+
+<span class="k">def</span> <span class="nf">test_using_a_fixture</span><span class="p">(</span><span class="n">base_dikeprofile</span><span class="p">:</span> <span class="n">DikeProfile</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base_dikeprofile</span><span class="p">,</span> <span class="n">DikeProfile</span><span class="p">)</span>
+</code></pre></div>
+- Providing initial data and cleaning it up afterwards.
+    <div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">base_output_dir</span><span class="p">():</span>
+    <span class="n">_test_results</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;test_results&quot;</span>
+    <span class="n">_test_suite_results</span> <span class="o">=</span> <span class="n">_test_results</span> <span class="o">/</span> <span class="s2">&quot;acceptance_tests&quot;</span>
+    <span class="n">_test_suite_results</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Give data to the test.</span>
+    <span class="k">yield</span> <span class="n">_test_suite_results</span>
+
+    <span class="c1"># This code executes after the test ends</span>
+    <span class="k">if</span> <span class="n">_test_suite_results</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_test_suite_results</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_using_a_fixture</span><span class="p">(</span><span class="n">base_output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">pytest</span><span class="o">.</span><span class="n">FixtureRequest</span><span class="p">):</span>
+    <span class="n">this_test_results</span> <span class="o">=</span> <span class="n">base_output_dir</span> <span class="o">/</span> <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">this_test_results</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pytest</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="s2">&quot;This is a dumb test&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="workflows-on-github">Workflows on GitHub<a class="headerlink" href="#workflows-on-github" title="Permanent link">&para;</a></h2>
+<p>Yoy may find multiple solutions by googling this, but our most common pipeline in Python is something similar to this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ci-on-push-and-autoformat</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">synchronize</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopened</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">CI</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;!startsWith(github.event.head_commit.message,</span><span class="nv"> </span><span class="s">&#39;bump:&#39;)&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">fail-fast</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">      </span><span class="nt">matrix</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;3.10&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ubuntu-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">windows-latest</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">macos-latest</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.os }}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write-all</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run image</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abatilo/actions-poetry@v2.0.0</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">poetry-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.8</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache Poetry virtualenv</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cache</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.virtualenvs</span><span class="w"></span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">venv-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles(&#39;**/poetry.lock&#39;) }}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">            </span><span class="no">venv-${{ matrix.os }}-${{ matrix.python-version }}-</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set Poetry config</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry config virtualenvs.in-project false</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry config virtualenvs.path ~/.virtualenvs</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Dependencies</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry install</span><span class="w"></span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">steps.cache.outputs.cache-hit != &#39;true&#39;</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with pytest</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry run pytest --cov=dikesfordummies --cov-report xml:coverage-reports/coverage-dikesfordummies-src.xml --junitxml=xunit-reports/xunit-result-dikesfordummies-src.xml</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry run coverage xml -i</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Autoformat code if the check fails</span><span class="w"></span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ (matrix.os == &#39;ubuntu-latest&#39;) &amp;&amp; (matrix.python-version == 3.10) }}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w">  </span><span class="c1"># Needed to get PR information, if any</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry run isort .</span><span class="w"></span>
+<span class="w">          </span><span class="no">poetry run black .</span><span class="w"></span>
+<span class="w">          </span><span class="no">git config --global user.name &#39;${{ github.actor }}&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="no">git config --global user.email &#39;${{ github.actor }}@users.noreply.github.com&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="no">git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY</span><span class="w"></span>
+<span class="w">          </span><span class="no">git checkout $GITHUB_HEAD_REF</span><span class="w"></span>
+<span class="w">          </span><span class="no">git commit -am &quot;autoformat: isort &amp; black&quot; &amp;&amp; git push || true</span><span class="w"></span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SonarCloud Scan</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SonarSource/sonarcloud-github-action@master</span><span class="w"></span>
+<span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ (matrix.os == &#39;ubuntu-latest&#39;) &amp;&amp; (matrix.python-version == 3.10) }}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w">  </span><span class="c1"># Needed to get PR information, if any</span><span class="w"></span>
+<span class="w">          </span><span class="nt">SONAR_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.SONAR_TOKEN }}</span><span class="w"></span>
+</code></pre></div>
+<blockquote>
+<p>You need to save the above content as a .yml file in the .github/workflows/ directory.</p>
+</blockquote>
+<p>This pipeline will be executed during (any) pull-request and will ensure of several things:
+- The poetry installation works
+- The tests (all of them) are run correctly.
+- If the tests are all succesful:
+    - We will verify and format all the python files in our project.
+    - We will run a SonarCloud Scan (Follow the steps in the admin page of SonarCloud)</p>
+<p>In addition, thanks to <a href="https://commitizen-tools.github.io/commitizen/">commitizen</a> we can also add a step to 'bump' the package version and create new entries of the changelog. However, it is also possible as a manual step:
+<code>cz bump --changelog</code>.</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Although there is still much more to see, we have seen enough resources to create our own test suite and execute it either in a GitHub workflow, or in a TeamCity step. </p>
+<p>Now it is time to create tests and searching for more ways of providing quality to your tool.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="04_the_pythonic_way.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 04. The pythonic way." rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chapter 04. The pythonic way.
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="06_creating_interfaces.html" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 06. Creating interfaces." rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Chapter 06. Creating interfaces.
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Carsopre
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/Carsopre/dikes-for-dummies" target="_blank" rel="noopener" title="Source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

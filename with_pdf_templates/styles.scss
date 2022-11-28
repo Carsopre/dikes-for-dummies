@@ -1,0 +1,27 @@
+code {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+[data-md-color-scheme="dummies"] {
+    --md-primary-fg-color: #0a28a3;
+    --md-primary-fg-color--light: #0EBBF0;
+    --md-primary-fg-color--dark: #080C80;
+    --md-code-hl-number-color: #0EBBF0;
+    --md-code-hl-special-color: #080C80;
+}
+
+article h1 {
+    border-bottom: 2px solid #080d9d;
+}
+
+article h2 {
+    border-bottom: 1px solid #194db6;
+}
+
+.md-typeset ol,
+.md-typeset ul li ul {
+    padding-left: 2em;
+}
+
+// --md-code-hl-number-color: #d52a2a;
+// --md-code-hl-special-color: #db1457;
